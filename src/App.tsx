@@ -1,11 +1,11 @@
-import { Box, Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import { useState } from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
 
-import ExperimentGrid from "./components/ExperimentGrid";
-// import Footer from "./components/Footer";
-import GridTitle from "./components/GridTitle";
-import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
+import ExperimentGrid from "./components/Experiments/ExperimentGrid";
+import GridTitle from "./components/Experiments/GridTitle";
+import NavBar from "./components/TopBar/NavBar";
+import SideBar from "./components/SideBar/SideBar";
+import Footer from "./components/Footer";
 
 function App() {
     const [chapter, setChapter] = useState(0);
@@ -16,24 +16,27 @@ function App() {
     return (
         <>
             <Grid
-                templateAreas={{ base: `"nav" "main" "footer"`, lg: `"nav nav" "sidebar main" "footer footer"` }}
+                templateAreas={{ base: `"nav" "main" "footer"`, lg: `"nav nav" "sidebar main" "sidebar footer"` }}
                 templateColumns={{ base: "1fr", lg: "300px 1fr" }}
             >
-                <GridItem area="nav" bg="chakra-body-bg" padding="10px" position="sticky" top="0" zIndex="2">
+                <GridItem
+                    area="nav"
+                    bg="chakra-body-bg"
+                    padding="10px"
+                    position="fixed"
+                    top="0"
+                    left="0"
+                    right="0"
+                    zIndex="1"
+                >
                     <NavBar onSearch={(searchText) => setSearch(searchText)} />
                 </GridItem>
-                <Box>
-                    <Show above="lg">
-                        <GridItem area="sidebar" position="sticky" top="40px" bottom="0px" padding="20px">
-                            <Heading size="sm" margin="0px 0px 10px 15px">
-                                Filter by Chapter
-                            </Heading>
-                            <SideBar pickedChapter={chapter} onPickChapter={(chapter) => setChapter(chapter)} />
-                        </GridItem>
-                    </Show>
-                </Box>
 
-                <GridItem area="main" paddingRight="5px">
+                <GridItem area="sidebar" padding="20px 10px 10px 10px" position="fixed" top="50px" left="0">
+                    <SideBar pickedChapter={chapter} onPickChapter={(chapter) => setChapter(chapter)} />
+                </GridItem>
+
+                <GridItem area="main" marginTop="50px">
                     <GridTitle
                         onClearChapter={(chapter) => setChapter(chapter)}
                         chapter={chapter}
@@ -47,7 +50,9 @@ function App() {
                         onChangeVisible={(experiments) => setVisibleExperiments(experiments)}
                     />
                 </GridItem>
-                <GridItem area="footer">{/* <Footer /> */}</GridItem>
+                <GridItem area="footer">
+                    <Footer />
+                </GridItem>
             </Grid>
         </>
     );

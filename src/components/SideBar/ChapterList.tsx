@@ -1,7 +1,7 @@
+import { List, ListItem, Text, Button, Center } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { List, ListItem, Text, HStack, Button, Center } from "@chakra-ui/react";
 
-import data from "../data/chapters.json";
+import data from "../../data/chapters.json";
 
 interface Chapter {
     id: number;
@@ -14,7 +14,7 @@ interface Props {
     pickedChapter: number;
 }
 
-const SideBar = ({ onPickChapter, pickedChapter }: Props) => {
+const ChapterList = ({ onPickChapter, pickedChapter }: Props) => {
     const [chapters, setChapters] = useState<Chapter[]>([]);
 
     useEffect(() => {
@@ -41,15 +41,15 @@ const SideBar = ({ onPickChapter, pickedChapter }: Props) => {
                             pickedChapter === chapter.id ? () => onPickChapter(0) : () => onPickChapter(chapter.id)
                         }
                     >
-                        <HStack align="left" width="260px">
-                            <Text
-                                color="chakra-body-text"
-                                opacity={pickedChapter === chapter.id ? 1 : 0.5}
-                                fontWeight="normal"
-                            >
-                                {chapter.title}
-                            </Text>
-                        </HStack>
+                        <Text
+                            width="260px"
+                            align="left"
+                            color="chakra-body-text"
+                            opacity={pickedChapter === chapter.id ? 1 : 0.5}
+                            fontWeight="normal"
+                        >
+                            {chapter.title}
+                        </Text>
                     </Button>
                 </ListItem>
             ))}
@@ -57,4 +57,4 @@ const SideBar = ({ onPickChapter, pickedChapter }: Props) => {
     );
 };
 
-export default SideBar;
+export default ChapterList;

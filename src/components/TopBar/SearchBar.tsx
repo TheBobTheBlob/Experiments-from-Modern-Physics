@@ -37,7 +37,7 @@ const SearchBar = ({ onSearch }: Props) => {
             onFocus={() => setSeeShortcut(false)}
             onBlur={() => setSeeShortcut(true)}
         >
-            <InputGroup paddingRight="5px">
+            <InputGroup>
                 <InputLeftElement pointerEvents="none">
                     <Search />
                 </InputLeftElement>
@@ -49,7 +49,7 @@ const SearchBar = ({ onSearch }: Props) => {
                 />
                 <Show above="lg">
                     {seeShortcut && (
-                        <InputRightElement paddingRight={value ? "160px" : "50px"} pointerEvents="none">
+                        <InputRightElement paddingRight={value ? "160px" : "40px"} pointerEvents="none">
                             <>
                                 <Kbd>Ctrl</Kbd>
                                 <Kbd>K</Kbd>
@@ -57,7 +57,7 @@ const SearchBar = ({ onSearch }: Props) => {
                         </InputRightElement>
                     )}
                     {value && (
-                        <InputRightElement width="130px">
+                        <InputRightElement width="120px">
                             <Button
                                 variant="ghost"
                                 colorScheme="modblue"

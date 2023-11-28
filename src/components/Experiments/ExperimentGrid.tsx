@@ -4,7 +4,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import ExperimentCard from "./ExperimentCard";
 import ExperimentCardSkeleton from "./ExperimentCardSkeleton";
 
-import data from "../data/experiments.json";
+import data from "../../data/experiments.json";
 
 export interface Experiment {
     id: number;
