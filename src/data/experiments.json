@@ -4,7 +4,7 @@
         "id": 1,
         "chapter": 1,
         "link": "https://youtu.be/ruBfXIVSYZ8",
-        "duration": "51s",
+        "duration": 51,
         "description": "Professor Walter Lewin uses a gas powered bicycle to prove Newton's Third Law"
     },
     {
@@ -12,7 +12,7 @@
         "id": 2,
         "chapter": 1,
         "link": "https://youtu.be/jNPUCmkKiE4",
-        "duration": "4m 38s",
+        "duration": 278,
         "description": "The first law of thermodynamics is shown in two different ways"
     },
     {
@@ -20,7 +20,7 @@
         "id": 3,
         "chapter": 1,
         "link": "https://youtu.be/oEZbkXB3y1Q",
-        "duration": "4m 08s",
+        "duration": 248,
         "description": "Charles's Law, part of the ideal gas equation, is demonstated using a balloon and nitrogen"
     },
     {
@@ -28,7 +28,7 @@
         "id": 4,
         "chapter": 2,
         "link": "https://youtu.be/gdRmCqylsME",
-        "duration": "2m 58s",
+        "duration": 178,
         "description": "Clocks on a plane and on the ground are compared using Einstein's theory"
     },
     {
@@ -36,7 +36,7 @@
         "id": 5,
         "chapter": 2,
         "link": "https://youtu.be/5xsPnlRpucc",
-        "duration": "55s",
+        "duration": 55,
         "description": "The Doppler effect is demonstarted by spinning a tuning fork"
     },
     {
@@ -44,7 +44,7 @@
         "id": 6,
         "chapter": 3,
         "link": "https://youtu.be/sUc13Q8CF3s",
-        "duration": "29m 02s",
+        "duration": 1742,
         "description": "The charge of an electron can be found by suspending droplets of oil in an electric field"
     },
     {
@@ -52,7 +52,7 @@
         "id": 7,
         "chapter": 3,
         "link": "https://youtu.be/v-1zjdUTu0o",
-        "duration": "3m 04s",
+        "duration": 184,
         "description": "See the difference between visible and ultraviolet light on zinc"
     },
     {
@@ -60,7 +60,7 @@
         "id": 8,
         "chapter": 4,
         "link": "https://youtu.be/XBqHkraf8iE",
-        "duration": "4m 05s",
+        "duration": 245,
         "description": "A modern reconstruction of the famous Rutherford gold foil experiment"
     },
     {
@@ -68,7 +68,7 @@
         "id": 9,
         "chapter": 4,
         "link": "https://youtu.be/N_fbwYQZLEg",
-        "duration": "29m 40s",
+        "duration": 1780,
         "description": "Professor Byron L Youtz recreates this experiment by shooting electrons through mercury"
     },
     {
@@ -76,7 +76,7 @@
         "id": 10,
         "chapter": 5,
         "link": "https://youtu.be/uohd0TtqOaw",
-        "duration": "3m 18s",
+        "duration": 198,
         "description": "Professor Boyd F. Edwards demonstartes the double slit experiment with light"
     },
     {
@@ -84,7 +84,7 @@
         "id": 11,
         "chapter": 5,
         "link": "https://youtu.be/PVyJFzx7zig",
-        "duration": "2m 16s",
+        "duration": 136,
         "description": "Professor Boyd F. Edwards demonstartes light diffraction through a single slit"
     },
     {
@@ -92,7 +92,7 @@
         "id": 12,
         "chapter": 6,
         "link": "https://youtu.be/FJBPNJR2QJU",
-        "duration": "6m 52s",
+        "duration": 412,
         "description": "An explanation of a simple mass spring system by Professor Boyd F. Edwards"
     }
 ]

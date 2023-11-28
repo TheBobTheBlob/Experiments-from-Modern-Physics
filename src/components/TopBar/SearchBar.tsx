@@ -44,7 +44,9 @@ const SearchBar = ({ onSearch }: Props) => {
                 <Input
                     ref={ref}
                     placeholder="Search experiments..."
+                    name="search"
                     variant="filled"
+                    colorScheme="modblue"
                     paddingRight={{ base: "0px", lg: seeShortcut ? "200px" : "125px" }}
                 />
                 <Show above="lg">

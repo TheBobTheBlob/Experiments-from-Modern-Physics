@@ -11,18 +11,25 @@ export interface Experiment {
     title: string;
     chapter: number;
     link: string;
-    duration: string;
+    duration: number;
     description: string;
 }
 
 interface Props {
     chapter: number;
     search: string;
+    sort: string;
     onChangeTotal: (experiments: number) => void;
     onChangeVisible: (experiments: number) => void;
 }
 
-const ExperimentGrid = ({ chapter, search, onChangeTotal, onChangeVisible }: Props) => {
+export const sortString = (array1: Experiment, array2: Experiment) => {
+    if (array1.title.toLowerCase() > array2.title.toLowerCase()) return 1;
+    if (array1.title.toLowerCase() < array2.title.toLowerCase()) return -1;
+    return 0;
+};
+
+const ExperimentGrid = ({ chapter, search, sort, onChangeTotal, onChangeVisible }: Props) => {
     let json = JSON.parse(JSON.stringify(data));
 
     const [experiments, setExperiments] = useState<Experiment[]>([]);
@@ -45,11 +52,19 @@ const ExperimentGrid = ({ chapter, search, onChangeTotal, onChangeVisible }: Pro
                     experiment.description.toLowerCase().includes(search.toLowerCase())
             );
 
+        if (sort === "chapter") {
+            json = json.sort((a: Experiment, b: Experiment) => a.chapter - b.chapter);
+        } else if (sort === "duration") {
+            json = json.sort((a: Experiment, b: Experiment) => a.duration - b.duration);
+        } else {
+            json = json.sort((a: Experiment, b: Experiment) => sortString(a, b));
+        }
+
         onChangeVisible(json.length);
         setExperiments(json);
 
         setLoading(false);
-    }, [chapter, search]);
+    }, [chapter, search, sort]);
 
     return (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} padding="10px" spacing={10}>

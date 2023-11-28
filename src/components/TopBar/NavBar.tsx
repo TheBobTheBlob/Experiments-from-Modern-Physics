@@ -10,7 +10,7 @@ interface Props {
 const NavBar = ({ onSearch }: Props) => {
     return (
         <HStack spacing="5">
-            <Image src={logo} boxSize="40px" padding="3px 0px 3px 3px" />
+            <Image src={logo} title="logo" boxSize="40px" padding="3px 0px 3px 3px" />
             <Show above="lg">
                 <Heading size="sm" whiteSpace="nowrap" color="modblue.200">
                     Experiments from Modern Physics

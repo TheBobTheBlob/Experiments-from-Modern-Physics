@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 function App() {
     const [chapter, setChapter] = useState(0);
     const [search, setSearch] = useState("");
+    const [sort, setSort] = useState("chapter");
     const [totalExperiments, setTotalExperiments] = useState(0);
     const [visibleExperiments, setVisibleExperiments] = useState(0);
 
@@ -39,13 +40,16 @@ function App() {
                 <GridItem area="main" marginTop="50px">
                     <GridTitle
                         onClearChapter={(chapter) => setChapter(chapter)}
+                        onSelectSort={(sort) => setSort(sort)}
                         chapter={chapter}
+                        sort={sort}
                         total={totalExperiments}
                         visible={visibleExperiments}
                     />
                     <ExperimentGrid
                         chapter={chapter}
                         search={search}
+                        sort={sort}
                         onChangeTotal={(experiments) => setTotalExperiments(experiments)}
                         onChangeVisible={(experiments) => setVisibleExperiments(experiments)}
                     />

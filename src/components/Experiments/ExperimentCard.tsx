@@ -11,6 +11,14 @@ export const openInNewTab = (url: string) => {
     if (newWindow) newWindow.opener = null;
 };
 
+export const intToTime = (time: number) => {
+    let minutes = Math.floor(time / 60).toString();
+    let seconds = (time % 60).toString().padStart(2, "0");
+
+    if (minutes === "0") return `${seconds}s`;
+    else return `${minutes}m ${seconds}s`;
+};
+
 const ExperimentCard = ({ experiment }: Props) => {
     return (
         <Card>
@@ -33,7 +41,7 @@ const ExperimentCard = ({ experiment }: Props) => {
                     colorScheme="modblue"
                     onClick={() => openInNewTab(experiment.link)}
                 >
-                    Watch ({experiment.duration})
+                    Watch ({intToTime(experiment.duration)})
                 </Button>
             </CardFooter>
         </Card>
