@@ -18,16 +18,24 @@ export interface Experiment {
 interface Props {
     chapter: number;
     search: string;
+    onChangeTotal: (experiments: number) => void;
+    onChangeVisible: (experiments: number) => void;
 }
 
-const ExperimentGrid = ({ chapter, search }: Props) => {
+const ExperimentGrid = ({ chapter, search, onChangeTotal, onChangeVisible }: Props) => {
+    let json = JSON.parse(JSON.stringify(data));
+
     const [experiments, setExperiments] = useState<Experiment[]>([]);
 
     const [loading, setLoading] = useState(true);
     const skeletons = [1, 2, 3, 4, 5, 6];
 
     useEffect(() => {
-        let json = JSON.parse(JSON.stringify(data));
+        onChangeTotal(json.length);
+    }, []);
+
+    useEffect(() => {
+        setLoading(true);
 
         if (chapter > 0) json = json.filter((experiment: Experiment) => experiment.chapter === chapter);
         if (search)
@@ -37,7 +45,9 @@ const ExperimentGrid = ({ chapter, search }: Props) => {
                     experiment.description.toLowerCase().includes(search.toLowerCase())
             );
 
+        onChangeVisible(json.length);
         setExperiments(json);
+
         setLoading(false);
     }, [chapter, search]);
 
