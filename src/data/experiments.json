@@ -1,0 +1,98 @@
+[
+    {
+        "title": "Newton's Third Law",
+        "id": 1,
+        "chapter": 1,
+        "link": "https://youtu.be/ruBfXIVSYZ8",
+        "duration": "51s",
+        "description": "Professor Walter Lewin uses a gas powered bicycle to prove Newton's Third Law"
+    },
+    {
+        "title": "First Law of Thermodynamics",
+        "id": 2,
+        "chapter": 1,
+        "link": "https://youtu.be/jNPUCmkKiE4",
+        "duration": "4m 38s",
+        "description": "The first law of thermodynamics is shown in two different ways"
+    },
+    {
+        "title": "Charles's Law",
+        "id": 3,
+        "chapter": 1,
+        "link": "https://youtu.be/oEZbkXB3y1Q",
+        "duration": "4m 08s",
+        "description": "Charles's Law, part of the ideal gas equation, is demonstated using a balloon and nitrogen"
+    },
+    {
+        "title": "Time Dilation",
+        "id": 4,
+        "chapter": 2,
+        "link": "https://youtu.be/gdRmCqylsME",
+        "duration": "2m 58s",
+        "description": "Clocks on a plane and on the ground are compared using Einstein's theory"
+    },
+    {
+        "title": "Doppler Effect",
+        "id": 5,
+        "chapter": 2,
+        "link": "https://youtu.be/5xsPnlRpucc",
+        "duration": "55s",
+        "description": "The Doppler effect is demonstarted by spinning a tuning fork"
+    },
+    {
+        "title": "Millikan Oil-Drop",
+        "id": 6,
+        "chapter": 3,
+        "link": "https://youtu.be/sUc13Q8CF3s",
+        "duration": "29m 02s",
+        "description": "The charge of an electron can be found by suspending droplets of oil in an electric field"
+    },
+    {
+        "title": "Photoelectric Effect",
+        "id": 7,
+        "chapter": 3,
+        "link": "https://youtu.be/v-1zjdUTu0o",
+        "duration": "3m 04s",
+        "description": "See the difference between visible and ultraviolet light on zinc"
+    },
+    {
+        "title": "Rutherford's Gold Foil",
+        "id": 8,
+        "chapter": 4,
+        "link": "https://youtu.be/XBqHkraf8iE",
+        "duration": "4m 05s",
+        "description": "A modern reconstruction of the famous Rutherford gold foil experiment"
+    },
+    {
+        "title": "Franck-Hertz Experiment",
+        "id": 9,
+        "chapter": 4,
+        "link": "https://youtu.be/N_fbwYQZLEg",
+        "duration": "29m 40s",
+        "description": "Professor Byron L Youtz recreates this experiment by shooting electrons through mercury"
+    },
+    {
+        "title": "Single Slit Diffraction",
+        "id": 10,
+        "chapter": 5,
+        "link": "https://youtu.be/uohd0TtqOaw",
+        "duration": "3m 18s",
+        "description": "Professor Boyd F. Edwards demonstartes the double slit experiment with light"
+    },
+    {
+        "title": "Young's Double Slit",
+        "id": 11,
+        "chapter": 5,
+        "link": "https://youtu.be/PVyJFzx7zig",
+        "duration": "2m 16s",
+        "description": "Professor Boyd F. Edwards demonstartes light diffraction through a single slit"
+    },
+    {
+        "title": "Simple Harmonic Motion",
+        "id": 12,
+        "chapter": 6,
+        "link": "https://youtu.be/FJBPNJR2QJU",
+        "duration": "6m 52s",
+        "description": "An explanation of a simple mass spring system by Professor Boyd F. Edwards"
+    }
+]

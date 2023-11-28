@@ -1,10 +1,22 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { HStack, Image, Heading, Show } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
 
-const NavBar = () => {
+import SearchBar from "./SearchBar";
+
+interface Props {
+    onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
     return (
-        <HStack>
-            <Image src={logo} boxSize="50px" />
+        <HStack spacing="5">
+            <Image src={logo} boxSize="40px" padding="3px 0px 3px 3px" />
+            <Show above="lg">
+                <Heading size="sm" whiteSpace="nowrap" color="modblue.200">
+                    Experiments from Modern Physics
+                </Heading>
+            </Show>
+            <SearchBar onSearch={onSearch} />
         </HStack>
     );
 };
