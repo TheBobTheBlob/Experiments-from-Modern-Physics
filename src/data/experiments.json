@@ -5,6 +5,8 @@
         "chapter": 1,
         "link": "https://youtu.be/ruBfXIVSYZ8",
         "duration": 51,
+        "channel": "The PhysicsMaths Wizard",
+        "channelLink": "https://www.youtube.com/@ThePhysicsMathsWizard",
         "description": "Professor Walter Lewin uses a gas powered bicycle to prove Newton's Third Law"
     },
     {
@@ -13,6 +15,8 @@
         "chapter": 1,
         "link": "https://youtu.be/jNPUCmkKiE4",
         "duration": 278,
+        "channel": "Darren Chan",
+        "channelLink": "https://www.youtube.com/@darrenchan3228",
         "description": "The first law of thermodynamics is shown in two different ways"
     },
     {
@@ -21,6 +25,8 @@
         "chapter": 1,
         "link": "https://youtu.be/oEZbkXB3y1Q",
         "duration": 248,
+        "channel": "MWSU Chemistry Department",
+        "channelLink": "https://www.youtube.com/@MWSUChemistryDepartment",
         "description": "Charles's Law, part of the ideal gas equation, is demonstated using a balloon and nitrogen"
     },
     {
@@ -29,6 +35,8 @@
         "chapter": 2,
         "link": "https://youtu.be/gdRmCqylsME",
         "duration": 178,
+        "channel": "stevebd1",
+        "channelLink": "https://www.youtube.com/@stevebd1",
         "description": "Clocks on a plane and on the ground are compared using Einstein's theory"
     },
     {
@@ -37,6 +45,8 @@
         "chapter": 2,
         "link": "https://youtu.be/5xsPnlRpucc",
         "duration": 55,
+        "channel": "Ken Sadowsky",
+        "channelLink": "https://www.youtube.com/@kennethsadowsky1927",
         "description": "The Doppler effect is demonstarted by spinning a tuning fork"
     },
     {
@@ -45,6 +55,8 @@
         "chapter": 3,
         "link": "https://youtu.be/sUc13Q8CF3s",
         "duration": 1742,
+        "channel": "caltech",
+        "channelLink": "https://www.youtube.com/@caltech",
         "description": "The charge of an electron can be found by suspending droplets of oil in an electric field"
     },
     {
@@ -53,6 +65,8 @@
         "chapter": 3,
         "link": "https://youtu.be/v-1zjdUTu0o",
         "duration": 184,
+        "channel": "National STEM Centre",
+        "channelLink": "https://www.youtube.com/@nationalstemcentre5692",
         "description": "See the difference between visible and ultraviolet light on zinc"
     },
     {
@@ -61,6 +75,8 @@
         "chapter": 4,
         "link": "https://youtu.be/XBqHkraf8iE",
         "duration": 245,
+        "channel": "BackstageScience",
+        "channelLink": "https://www.youtube.com/@BackstageScience",
         "description": "A modern reconstruction of the famous Rutherford gold foil experiment"
     },
     {
@@ -69,6 +85,8 @@
         "chapter": 4,
         "link": "https://youtu.be/N_fbwYQZLEg",
         "duration": 1780,
+        "channel": "Henrik Bak Heyde",
+        "channelLink": "https://www.youtube.com/@henrikbakheyde",
         "description": "Professor Byron L Youtz recreates this experiment by shooting electrons through mercury"
     },
     {
@@ -77,6 +95,8 @@
         "chapter": 5,
         "link": "https://youtu.be/uohd0TtqOaw",
         "duration": 198,
+        "channel": "Physics Demos",
+        "channelLink": "https://www.youtube.com/@physicsdemos",
         "description": "Professor Boyd F. Edwards demonstartes the double slit experiment with light"
     },
     {
@@ -85,6 +105,8 @@
         "chapter": 5,
         "link": "https://youtu.be/PVyJFzx7zig",
         "duration": 136,
+        "channel": "Physics Demos",
+        "channelLink": "https://www.youtube.com/@physicsdemos",
         "description": "Professor Boyd F. Edwards demonstartes light diffraction through a single slit"
     },
     {
@@ -93,6 +115,8 @@
         "chapter": 6,
         "link": "https://youtu.be/FJBPNJR2QJU",
         "duration": 412,
+        "channel": "Physics Demos",
+        "channelLink": "https://www.youtube.com/@physicsdemos",
         "description": "An explanation of a simple mass spring system by Professor Boyd F. Edwards"
     }
 ]

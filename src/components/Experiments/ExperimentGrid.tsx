@@ -12,6 +12,8 @@ export interface Experiment {
     chapter: number;
     link: string;
     duration: number;
+    channel: string;
+    channelLink: string;
     description: string;
 }
 
@@ -19,6 +21,7 @@ interface Props {
     chapter: number;
     search: string;
     sort: string;
+    onPickChapter: (chapter: number) => void;
     onChangeTotal: (experiments: number) => void;
     onChangeVisible: (experiments: number) => void;
 }
@@ -29,7 +32,7 @@ export const sortString = (array1: Experiment, array2: Experiment) => {
     return 0;
 };
 
-const ExperimentGrid = ({ chapter, search, sort, onChangeTotal, onChangeVisible }: Props) => {
+const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onChangeTotal, onChangeVisible }: Props) => {
     let json = JSON.parse(JSON.stringify(data));
 
     const [experiments, setExperiments] = useState<Experiment[]>([]);
@@ -70,7 +73,13 @@ const ExperimentGrid = ({ chapter, search, sort, onChangeTotal, onChangeVisible 
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} padding="10px" spacing={10}>
             {loading
                 ? skeletons.map((skeleton) => <ExperimentCardSkeleton key={skeleton} />)
-                : experiments.map((experiment) => <ExperimentCard key={experiment.id} experiment={experiment} />)}
+                : experiments.map((experiment) => (
+                      <ExperimentCard
+                          key={experiment.id}
+                          experiment={experiment}
+                          onPickChapter={(chapter) => onPickChapter(chapter)}
+                      />
+                  ))}
         </SimpleGrid>
     );
 };

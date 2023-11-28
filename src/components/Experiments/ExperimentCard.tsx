@@ -1,10 +1,6 @@
-import { Badge, Button, Card, CardBody, CardFooter, Heading, Image, Text } from "@chakra-ui/react";
+import { Badge, Button, Card, CardBody, CardFooter, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { Experiment } from "./ExperimentGrid";
 import { ExternalLink } from "react-feather";
-
-interface Props {
-    experiment: Experiment;
-}
 
 export const openInNewTab = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -19,7 +15,12 @@ export const intToTime = (time: number) => {
     else return `${minutes}m ${seconds}s`;
 };
 
-const ExperimentCard = ({ experiment }: Props) => {
+interface Props {
+    experiment: Experiment;
+    onPickChapter: (chapter: number) => void;
+}
+
+const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
     return (
         <Card>
             <Image
@@ -28,11 +29,18 @@ const ExperimentCard = ({ experiment }: Props) => {
                 alt={`Thumbnail of experiment ${experiment.id} video`}
             />
             <CardBody padding="10px">
+                <HStack marginTop="10px">
+                    <Badge onClick={() => onPickChapter(experiment.chapter)} cursor="pointer">
+                        Chapter {experiment.chapter}
+                    </Badge>
+                    <Badge onClick={() => openInNewTab(experiment.channelLink)} cursor="pointer">
+                        {experiment.channel}
+                    </Badge>
+                </HStack>
                 <Heading size="md" marginTop="10px">
                     {experiment.title}
                 </Heading>
-                <Badge marginTop="10px">Chapter {experiment.chapter}</Badge>
-                <Text marginTop="20px">{experiment.description}</Text>
+                <Text marginTop="10px">{experiment.description}</Text>
             </CardBody>
             <CardFooter padding="10px">
                 <Button

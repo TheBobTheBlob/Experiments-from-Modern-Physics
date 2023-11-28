@@ -50,6 +50,7 @@ function App() {
                         chapter={chapter}
                         search={search}
                         sort={sort}
+                        onPickChapter={(chapter) => setChapter(chapter)}
                         onChangeTotal={(experiments) => setTotalExperiments(experiments)}
                         onChangeVisible={(experiments) => setVisibleExperiments(experiments)}
                     />
