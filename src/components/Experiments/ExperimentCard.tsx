@@ -25,7 +25,7 @@ const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
     return (
         <Card>
             <Image
-                src={`/thumbnails/${experiment.id}.jpg`}
+                src={`/thumbnails/${experiment.id}.webp`}
                 borderTopRadius="5px"
                 alt={`Thumbnail of experiment ${experiment.id} video`}
             />

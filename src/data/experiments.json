@@ -118,5 +118,15 @@
         "channel": "Physics Demos",
         "channelLink": "https://www.youtube.com/@physicsdemos",
         "description": "An explanation of a simple mass spring system by Professor Boyd F. Edwards"
+    },
+    {
+        "title": "Zeeman Effect",
+        "id": 13,
+        "chapter": 7,
+        "link": "https://youtu.be/ZmObNFAqkBE",
+        "duration": 626,
+        "channel": "Lehrportal Uni Göttingen",
+        "channelLink": "https://www.youtube.com/@lehrportalunigottingen6901",
+        "description": "The Georg-August University conducts an experiment to show the Zeeman effect"
     }
 ]
