@@ -21,7 +21,7 @@ const GridTitle = ({ onClearChapter, onSelectSort, chapter, sort, total, visible
             )}
             <Show above="lg">
                 <Spacer />
-                <Text fontSize="sm" opacity="0.5">
+                <Text fontSize="sm" opacity="0.75">
                     Showing {visible} of {total}
                 </Text>
                 <Menu variant="filled" colorScheme="modblue" placement="top-end">

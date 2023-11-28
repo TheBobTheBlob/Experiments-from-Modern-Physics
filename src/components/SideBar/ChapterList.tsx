@@ -32,7 +32,7 @@ const ChapterList = ({ onPickChapter, pickedChapter }: Props) => {
                         isActive={pickedChapter === chapter.id}
                         leftIcon={
                             <Center bgColor="modblue.200" width="25px" height="25px" borderRadius="5px">
-                                <Text as="b" color="chakra-body-text">
+                                <Text as="b" color="chakra-body-bg">
                                     {chapter.chapter}
                                 </Text>
                             </Center>
@@ -45,7 +45,7 @@ const ChapterList = ({ onPickChapter, pickedChapter }: Props) => {
                             width="260px"
                             align="left"
                             color="chakra-body-text"
-                            opacity={pickedChapter === chapter.id ? 1 : 0.5}
+                            opacity={pickedChapter === chapter.id ? 1 : 0.75}
                             fontWeight="normal"
                         >
                             {chapter.title}

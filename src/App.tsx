@@ -37,7 +37,7 @@ function App() {
                     <SideBar pickedChapter={chapter} onPickChapter={(chapter) => setChapter(chapter)} />
                 </GridItem>
 
-                <GridItem area="main" marginTop="50px">
+                <GridItem area="main" marginTop="50px" minHeight="80vh">
                     <GridTitle
                         onClearChapter={(chapter) => setChapter(chapter)}
                         onSelectSort={(sort) => setSort(sort)}
@@ -51,11 +51,11 @@ function App() {
                         search={search}
                         sort={sort}
                         onPickChapter={(chapter) => setChapter(chapter)}
-                        onChangeTotal={(experiments) => setTotalExperiments(experiments)}
-                        onChangeVisible={(experiments) => setVisibleExperiments(experiments)}
+                        onTotalChange={(experiments) => setTotalExperiments(experiments)}
+                        onVisibleChange={(experiments) => setVisibleExperiments(experiments)}
                     />
                 </GridItem>
-                <GridItem area="footer">
+                <GridItem area="footer" position="relative" bottom="0">
                     <Footer />
                 </GridItem>
             </Grid>

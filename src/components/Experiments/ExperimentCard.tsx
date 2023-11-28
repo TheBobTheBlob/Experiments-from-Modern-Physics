@@ -1,6 +1,7 @@
-import { Badge, Button, Card, CardBody, CardFooter, HStack, Heading, Image, Text } from "@chakra-ui/react";
-import { Experiment } from "./ExperimentGrid";
+import { Badge, Button, Card, CardBody, CardFooter, HStack, Heading, Image, Text, Flex } from "@chakra-ui/react";
 import { ExternalLink } from "react-feather";
+
+import { Experiment } from "./ExperimentGrid";
 
 export const openInNewTab = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -34,7 +35,10 @@ const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
                         Chapter {experiment.chapter}
                     </Badge>
                     <Badge onClick={() => openInNewTab(experiment.channelLink)} cursor="pointer">
-                        {experiment.channel}
+                        <Flex alignItems="center" gap="5px">
+                            {experiment.channel}
+                            <ExternalLink width="15px" height="15px" />
+                        </Flex>
                     </Badge>
                 </HStack>
                 <Heading size="md" marginTop="10px">

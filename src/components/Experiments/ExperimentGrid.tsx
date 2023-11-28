@@ -22,17 +22,17 @@ interface Props {
     search: string;
     sort: string;
     onPickChapter: (chapter: number) => void;
-    onChangeTotal: (experiments: number) => void;
-    onChangeVisible: (experiments: number) => void;
+    onTotalChange: (experiments: number) => void;
+    onVisibleChange: (experiments: number) => void;
 }
 
-export const sortString = (array1: Experiment, array2: Experiment) => {
-    if (array1.title.toLowerCase() > array2.title.toLowerCase()) return 1;
-    if (array1.title.toLowerCase() < array2.title.toLowerCase()) return -1;
+export const sortString = (string1: string, string2: string) => {
+    if (string1 > string2) return 1;
+    if (string1 < string2) return -1;
     return 0;
 };
 
-const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onChangeTotal, onChangeVisible }: Props) => {
+const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, onVisibleChange }: Props) => {
     let json = JSON.parse(JSON.stringify(data));
 
     const [experiments, setExperiments] = useState<Experiment[]>([]);
@@ -41,29 +41,34 @@ const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onChangeTotal, o
     const skeletons = [1, 2, 3, 4, 5, 6];
 
     useEffect(() => {
-        onChangeTotal(json.length);
+        onTotalChange(json.length);
     }, []);
 
     useEffect(() => {
         setLoading(true);
 
         if (chapter > 0) json = json.filter((experiment: Experiment) => experiment.chapter === chapter);
-        if (search)
+        if (search) {
+            search = search.toLowerCase();
             json = json.filter(
                 (experiment: Experiment) =>
-                    experiment.title.toLowerCase().includes(search.toLowerCase()) ||
-                    experiment.description.toLowerCase().includes(search.toLowerCase())
+                    experiment.title.toLowerCase().includes(search) ||
+                    experiment.description.toLowerCase().includes(search) ||
+                    experiment.channel.toLowerCase().includes(search)
             );
+        }
 
         if (sort === "chapter") {
             json = json.sort((a: Experiment, b: Experiment) => a.chapter - b.chapter);
         } else if (sort === "duration") {
             json = json.sort((a: Experiment, b: Experiment) => a.duration - b.duration);
         } else {
-            json = json.sort((a: Experiment, b: Experiment) => sortString(a, b));
+            json = json.sort((a: Experiment, b: Experiment) =>
+                sortString(a.title.toLowerCase(), b.title.toLowerCase())
+            );
         }
 
-        onChangeVisible(json.length);
+        onVisibleChange(json.length);
         setExperiments(json);
 
         setLoading(false);

@@ -47,11 +47,11 @@ const SearchBar = ({ onSearch }: Props) => {
                     name="search"
                     variant="filled"
                     colorScheme="modblue"
-                    paddingRight={{ base: "0px", lg: seeShortcut ? "200px" : "125px" }}
+                    paddingRight={{ base: "0px", lg: seeShortcut ? "195px" : "120px" }}
                 />
                 <Show above="lg">
                     {seeShortcut && (
-                        <InputRightElement paddingRight={value ? "160px" : "40px"} pointerEvents="none">
+                        <InputRightElement paddingRight={value ? "155px" : "40px"} pointerEvents="none">
                             <>
                                 <Kbd>Ctrl</Kbd>
                                 <Kbd>K</Kbd>
@@ -59,7 +59,7 @@ const SearchBar = ({ onSearch }: Props) => {
                         </InputRightElement>
                     )}
                     {value && (
-                        <InputRightElement width="120px">
+                        <InputRightElement width="115px">
                             <Button
                                 variant="ghost"
                                 colorScheme="modblue"
