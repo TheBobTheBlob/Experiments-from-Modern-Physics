@@ -208,5 +208,35 @@
         "channel": "Harvard Natural Sciences",
         "channelLink": "https://www.youtube.com/@NatSciDemos",
         "description": "The Meissner effect is shown using liquid nitrogen, resulting in a floating magnet"
+    },
+    {
+        "title": "Seebeck Effect",
+        "id": 22,
+        "chapter": 11,
+        "link": "https://youtu.be/iqjD-kkbyKY",
+        "duration": 127,
+        "channel": "xofunkox",
+        "channelLink": "https://www.youtube.com/@xofunkox",
+        "description": "The Seebeck effect is shown using a bismuth bar, a copper bracket, and a damped magnet"
+    },
+    {
+        "title": "Alpha, Beta, and Gamma Radiation",
+        "id": 23,
+        "chapter": 12,
+        "link": "https://youtu.be/jZLn5c580_Q",
+        "duration": 404,
+        "channel": "Simon Lloyd",
+        "channelLink": "https://www.youtube.com/@simonlloyd6546",
+        "description": "The penetrating power of alpha, beta, and gamma radiation is tested"
+    },
+    {
+        "title": "Carbon Dating",
+        "id": 24,
+        "chapter": 12,
+        "link": "https://youtu.be/-xKvq6VLe4s",
+        "duration": 580,
+        "channel": "GNS Science",
+        "channelLink": "https://www.youtube.com/@GNSscience",
+        "description": "Christine Prior explains the process of radiocarbon dating using a textile sample"
     }
 ]

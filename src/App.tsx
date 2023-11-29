@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Divider } from "@chakra-ui/react";
 
 import ExperimentGrid from "./components/Experiments/ExperimentGrid";
 import GridTitle from "./components/Experiments/GridTitle";
@@ -40,7 +40,7 @@ function App() {
                     <SideBar pickedChapter={chapter} onPickChapter={(chapter) => setChapter(chapter)} />
                 </GridItem>
 
-                <GridItem area="main" marginTop="50px" minHeight="80vh">
+                <GridItem area="main" marginTop="50px" minHeight="75vh">
                     <GridTitle
                         onClearChapter={(chapter) => setChapter(chapter)}
                         onSelectSort={(sort) => setSort(sort)}
@@ -58,7 +58,8 @@ function App() {
                         onVisibleChange={(experiments) => setVisibleExperiments(experiments)}
                     />
                 </GridItem>
-                <GridItem area="footer" position="relative" bottom="0">
+                <GridItem area="footer" padding="30px 10px 0px 10px">
+                    <Divider />
                     <Footer />
                 </GridItem>
             </Grid>

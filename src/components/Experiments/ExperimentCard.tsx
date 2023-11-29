@@ -27,6 +27,7 @@ const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
             <Image
                 src={`/thumbnails/${experiment.id}.webp`}
                 borderTopRadius="5px"
+                aspectRatio="16 / 9"
                 alt={`Thumbnail of experiment ${experiment.id} video`}
             />
             <CardBody padding="10px">
