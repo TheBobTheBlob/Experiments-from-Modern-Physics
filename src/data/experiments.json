@@ -70,8 +70,18 @@
         "description": "See the difference between visible and ultraviolet light on zinc"
     },
     {
-        "title": "Rutherford's Gold Foil",
+        "title": "Blackbody Radiation",
         "id": 8,
+        "chapter": 3,
+        "link": "https://youtu.be/HnBZf1RfB-w",
+        "duration": 402,
+        "channel": "sciencesolutions",
+        "channelLink": "https://www.youtube.com/@sciencesolutions3891",
+        "description": "The intensty of blackbody radiation at different temperatures is simulated"
+    },
+    {
+        "title": "Rutherford's Gold Foil",
+        "id": 9,
         "chapter": 4,
         "link": "https://youtu.be/XBqHkraf8iE",
         "duration": 245,
@@ -81,7 +91,7 @@
     },
     {
         "title": "Franck-Hertz Experiment",
-        "id": 9,
+        "id": 10,
         "chapter": 4,
         "link": "https://youtu.be/N_fbwYQZLEg",
         "duration": 1780,
@@ -91,7 +101,7 @@
     },
     {
         "title": "Single Slit Diffraction",
-        "id": 10,
+        "id": 11,
         "chapter": 5,
         "link": "https://youtu.be/uohd0TtqOaw",
         "duration": 198,
@@ -101,7 +111,7 @@
     },
     {
         "title": "Young's Double Slit",
-        "id": 11,
+        "id": 12,
         "chapter": 5,
         "link": "https://youtu.be/PVyJFzx7zig",
         "duration": 136,
@@ -111,7 +121,7 @@
     },
     {
         "title": "Simple Harmonic Motion",
-        "id": 12,
+        "id": 13,
         "chapter": 6,
         "link": "https://youtu.be/FJBPNJR2QJU",
         "duration": 412,
@@ -121,12 +131,82 @@
     },
     {
         "title": "Zeeman Effect",
-        "id": 13,
+        "id": 14,
         "chapter": 7,
         "link": "https://youtu.be/ZmObNFAqkBE",
         "duration": 626,
         "channel": "Lehrportal Uni Göttingen",
         "channelLink": "https://www.youtube.com/@lehrportalunigottingen6901",
         "description": "The Georg-August University conducts an experiment to show the Zeeman effect"
+    },
+    {
+        "title": "Hydrogen Spectra",
+        "id": 15,
+        "chapter": 7,
+        "link": "https://youtu.be/OJzW2RoZq1Y",
+        "duration": 134,
+        "channel": "doughtyben",
+        "channelLink": "https://www.youtube.com/@doughtyben",
+        "description": "The spectra for hydrogen is shown using a gas spectra tube and a grating"
+    },
+    {
+        "title": "Joule's Paddle Wheel",
+        "id": 16,
+        "chapter": 9,
+        "link": "https://youtu.be/oP5ET5uxPow",
+        "duration": 280,
+        "channel": "HistoLab_EUF",
+        "channelLink": "https://www.youtube.com/@HistoLab_EUF",
+        "description": "A replica of Joule's paddle wheel, which he used to show the equivalence of work and heat"
+    },
+    {
+        "title": "Liquid Helium",
+        "id": 17,
+        "chapter": 9,
+        "link": "https://youtu.be/9FudzqfpLLs",
+        "duration": 252,
+        "channel": "BBC",
+        "channelLink": "https://www.youtube.com/@BBC",
+        "description": "Ben Miller presents two peculiar properties of supercooled liquid helium"
+    },
+    {
+        "title": "Creating a Hologram",
+        "id": 18,
+        "chapter": 10,
+        "link": "https://youtu.be/cxaj9_L5M7E",
+        "duration": 243,
+        "channel": "Nick Brandreth",
+        "channelLink": "https://www.youtube.com/@nickbrandreth",
+        "description": "Nick Brandreth goes over the process of creating a hologram by using a laser"
+    },
+    {
+        "title": "Thermal Expansion",
+        "id": 19,
+        "chapter": 10,
+        "link": "https://youtu.be/jYBsyG2-Dqo",
+        "duration": 783,
+        "channel": "UWMC Engineering",
+        "channelLink": "https://www.youtube.com/@UWMCEngineering",
+        "description": "The thermal expansion of steel, copper, and alluminium is measured"
+    },
+    {
+        "title": "Thermal Conductivity",
+        "id": 20,
+        "chapter": 10,
+        "link": "https://youtu.be/C29Oefmu2EM",
+        "duration": 330,
+        "channel": "Dan Cottle",
+        "channelLink": "https://www.youtube.com/@DanCottle1",
+        "description": "The thermal conductivity of steel, copper, and brass is compared with a bunsen burner"
+    },
+    {
+        "title": "Meissner Effect",
+        "id": 21,
+        "chapter": 10,
+        "link": "https://youtu.be/HRLvVkkq5GE",
+        "duration": 165,
+        "channel": "Harvard Natural Sciences",
+        "channelLink": "https://www.youtube.com/@NatSciDemos",
+        "description": "The Meissner effect is shown using liquid nitrogen, resulting in a floating magnet"
     }
 ]

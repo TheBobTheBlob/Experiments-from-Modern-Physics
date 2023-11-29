@@ -30,7 +30,10 @@ function App() {
                     right="0"
                     zIndex="1"
                 >
-                    <NavBar onSearch={(searchText) => setSearch(searchText)} />
+                    <NavBar
+                        onSearch={(searchText) => setSearch(searchText)}
+                        onPickChapter={(chapter) => setChapter(chapter)}
+                    />
                 </GridItem>
 
                 <GridItem area="sidebar" padding="20px 10px 10px 10px" position="fixed" top="50px" left="0">

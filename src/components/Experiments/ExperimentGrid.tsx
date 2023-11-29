@@ -75,7 +75,12 @@ const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, o
     }, [chapter, search, sort]);
 
     return (
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} padding="10px" spacing={10}>
+        <SimpleGrid
+            padding="10px"
+            spacing="30px"
+            gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+            justifyContent="space-between"
+        >
             {loading
                 ? skeletons.map((skeleton) => <ExperimentCardSkeleton key={skeleton} />)
                 : experiments.map((experiment) => (
