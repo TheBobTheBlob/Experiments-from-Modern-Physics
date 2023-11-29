@@ -4,7 +4,9 @@
   <img src=".github/screenshot.jpg" width="750" alt="Screenshot of website"/>
 </p>
 
-This website has links to videos demonstrating experiments relevant to the Modern Physics (2305) class at Missouri University of Science & Technology. [Hosted on Vercel](https://modphysics-experiments.vercel.app/)
+This website has links to videos demonstrating experiments relevant to the Modern Physics class (2305) at Missouri University of Science & Technology. [Hosted on Vercel](https://modphysics-experiments.vercel.app/)
+
+The chapters correspond to *Modern Physics For Scientists and Engineers (4th Edition)* by Stephen Thornton.
 
 ## Built With
 
@@ -23,7 +25,7 @@ After cloning the repository, install the required packages using `npm`
 npm install
 ```
 
-Along with the packages listed above, `vite`, the development environment, will also be installed.
+Along with the packages listed above, `vite` - the development environment - will also be installed.
 
 ```bash
 # Start the local development server
