@@ -36,7 +36,7 @@ function App() {
                     />
                 </GridItem>
 
-                <GridItem area="sidebar" padding="20px 10px 10px 10px" position="fixed" top="50px" left="0">
+                <GridItem area="sidebar" padding="20px 5px 10px 10px" position="fixed" top="50px" left="0">
                     <SideBar pickedChapter={chapter} onPickChapter={(chapter) => setChapter(chapter)} />
                 </GridItem>
 

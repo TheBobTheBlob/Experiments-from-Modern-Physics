@@ -1,4 +1,4 @@
-import { Heading, Show } from "@chakra-ui/react";
+import { Heading, Show, Box } from "@chakra-ui/react";
 
 import ChapterList from "./ChapterList";
 
@@ -10,10 +10,12 @@ interface Props {
 const SideBar = ({ onPickChapter, pickedChapter }: Props) => {
     return (
         <Show above="lg">
-            <Heading size="sm" margin="10px 0px 10px 15px">
+            <Heading size="sm" padding="10px 0px 10px 15px">
                 Filter by Chapter
             </Heading>
-            <ChapterList onPickChapter={onPickChapter} pickedChapter={pickedChapter} />
+            <Box overflowY="auto" maxHeight="calc(100vh - 120px)" paddingRight="5px">
+                <ChapterList onPickChapter={onPickChapter} pickedChapter={pickedChapter} />
+            </Box>
         </Show>
     );
 };
