@@ -238,5 +238,35 @@
         "channel": "GNS Science",
         "channelLink": "https://www.youtube.com/@GNSscience",
         "description": "Christine Prior explains the process of radiocarbon dating using a textile sample"
+    },
+    {
+        "title": "Van de Graaff Generator",
+        "id": 25,
+        "chapter": 13,
+        "link": "https://youtu.be/rNEY3Yv9kC8",
+        "duration": 166,
+        "channel": "SpanglerScienceTV",
+        "channelLink": "https://www.youtube.com/@SpanglerScienceTV",
+        "description": "Steve Spangler shows off a Van de Graff generator in multiple ways"
+    },
+    {
+        "title": "Cyclotron",
+        "id": 26,
+        "chapter": 13,
+        "link": "https://youtu.be/pmx57Nsn4e8",
+        "duration": 35,
+        "channel": "UMDemoLab",
+        "channelLink": "https://www.youtube.com/@UMDemoLab",
+        "description": "A miniature cyclotron is turned on, causing a metal ball to rotate around the model"
+    },
+    {
+        "title": "Discovery of the Higgs Boson",
+        "id": 27,
+        "chapter": 14,
+        "link": "https://youtu.be/so2nCu2Jkbc?list=PLAk-9e5KQYEqvdBn_fSMsuVPt-qOBhEEv",
+        "duration": 2070,
+        "channel": "CERN",
+        "channelLink": "https://www.youtube.com/@CERN",
+        "description": "Piotr Traczyk explains how the Higgs Boson was discovered at CERN"
     }
 ]
