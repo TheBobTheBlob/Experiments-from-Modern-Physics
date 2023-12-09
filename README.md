@@ -16,6 +16,7 @@ The following `node.js` libraries are required.
 - `chakra-ui`: UI component library
 - `react-feather`: Icon pack
 - `react-hotkeys-hook`: React plugin for shortcut keys
+- `zustand`: Global state variables
 
 ## Getting Started
 
