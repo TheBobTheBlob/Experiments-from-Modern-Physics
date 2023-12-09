@@ -1,23 +1,24 @@
-import { Button, VStack, Heading, Text, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Button, Heading, Menu, MenuButton, MenuItem, MenuList, Text, VStack } from "@chakra-ui/react";
 import { ChevronDown } from "react-feather";
 
+import { useChapterStore, useCountStore, useSortStore } from "../../Consts";
 import data from "../../data/chapters.json";
 
-interface Props {
-    onSelectChapter: (chapter: number) => void;
-    onSelectSort: (sort: string) => void;
-    chapter: number;
-    sort: string;
-    total: number;
-    visible: number;
-}
+const GridTitleMobile = () => {
+    const chapter = useChapterStore((state) => state.chapter);
+    const setChapter = useChapterStore((state) => state.setChapter);
 
-const GridTitleMobile = ({ onSelectChapter, onSelectSort, chapter, sort, total, visible }: Props) => {
-    const ChapterMenu = (chp_id: number) => {
-        if (chp_id === 0) return "All Chapters";
+    const sort = useSortStore((state) => state.sort);
+    const setSort = useSortStore((state) => state.setSort);
+
+    const visibleCount = useCountStore((state) => state.visibleCount);
+    const totalCount = useCountStore((state) => state.totalCount);
+
+    const ChapterMenu = (chapterId: number) => {
+        if (chapterId === 0) return "All Chapters";
         else {
-            let chp_data = data.find((chp) => chp.id === chp_id);
-            return `Chapter ${chp_data?.id}: ${chp_data?.title}`;
+            const chapterData = data.find((chapter) => chapter.id === chapterId);
+            return `Chapter ${chapterData?.id}: ${chapterData?.title}`;
         }
     };
 
@@ -25,7 +26,7 @@ const GridTitleMobile = ({ onSelectChapter, onSelectSort, chapter, sort, total, 
         <VStack margin="20px 10px 20px 10px" spacing="20px">
             <Heading>{chapter === 0 ? "All Experiments" : `Chapter ${chapter} Experiments`}</Heading>
             <Text fontSize="sm" opacity="0.75">
-                Showing {visible} of {total}
+                Showing {visibleCount} of {totalCount}
             </Text>
 
             <Menu variant="filled" colorScheme="modblue" matchWidth={true}>
@@ -33,16 +34,11 @@ const GridTitleMobile = ({ onSelectChapter, onSelectSort, chapter, sort, total, 
                     {ChapterMenu(chapter)}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem onClick={() => onSelectChapter(0)} key={0}>
+                    <MenuItem onClick={() => setChapter(0)} key={0}>
                         All Chapters
                     </MenuItem>
                     {data.map((chapter) => (
-                        <MenuItem
-                            onClick={() => {
-                                onSelectChapter(chapter.id);
-                            }}
-                            key={chapter.id}
-                        >
+                        <MenuItem onClick={() => setChapter(chapter.id)} key={chapter.id}>
                             Chapter {chapter.id}: {chapter.title}
                         </MenuItem>
                     ))}
@@ -54,9 +50,9 @@ const GridTitleMobile = ({ onSelectChapter, onSelectSort, chapter, sort, total, 
                     Sort by: {sort.charAt(0).toUpperCase() + sort.slice(1)}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem onClick={() => onSelectSort("chapter")}>Chapter</MenuItem>
-                    <MenuItem onClick={() => onSelectSort("title")}>Title</MenuItem>
-                    <MenuItem onClick={() => onSelectSort("duration")}>Duration</MenuItem>
+                    <MenuItem onClick={() => setSort("chapter")}>Chapter</MenuItem>
+                    <MenuItem onClick={() => setSort("title")}>Title</MenuItem>
+                    <MenuItem onClick={() => setSort("duration")}>Duration</MenuItem>
                 </MenuList>
             </Menu>
         </VStack>

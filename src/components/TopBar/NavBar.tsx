@@ -1,14 +1,13 @@
-import { HStack, Image, Heading, Show } from "@chakra-ui/react";
+import { HStack, Heading, Image, Show } from "@chakra-ui/react";
 import logo from "../../assets/logo.webp";
+
+import { useChapterStore } from "../../Consts";
 
 import SearchBar from "./SearchBar";
 
-interface Props {
-    onSearch: (searchText: string) => void;
-    onPickChapter: (chapter: number) => void;
-}
+const NavBar = () => {
+    const setChapter = useChapterStore((state) => state.setChapter);
 
-const NavBar = ({ onSearch, onPickChapter }: Props) => {
     return (
         <HStack spacing="5">
             <Image
@@ -16,7 +15,7 @@ const NavBar = ({ onSearch, onPickChapter }: Props) => {
                 title="logo"
                 boxSize="40px"
                 padding="3px 0px 3px 3px"
-                onClick={() => onPickChapter(0)}
+                onClick={() => setChapter(0)}
                 cursor="pointer"
             />
             <Show above="lg">
@@ -24,7 +23,7 @@ const NavBar = ({ onSearch, onPickChapter }: Props) => {
                     Experiments from Modern Physics
                 </Heading>
             </Show>
-            <SearchBar onSearch={onSearch} />
+            <SearchBar />
         </HStack>
     );
 };

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { List, ListItem, Text, Button, Center } from "@chakra-ui/react";
 
+import { useChapterStore } from "../../Consts";
 import data from "../../data/chapters.json";
 
 interface Chapter {
@@ -9,13 +10,11 @@ interface Chapter {
     title: string;
 }
 
-interface Props {
-    onPickChapter: (chapter: number) => void;
-    pickedChapter: number;
-}
-
-const ChapterList = ({ onPickChapter, pickedChapter }: Props) => {
+const ChapterList = () => {
     const [chapters, setChapters] = useState<Chapter[]>([]);
+
+    const chapter = useChapterStore((state) => state.chapter);
+    const setChapter = useChapterStore((state) => state.setChapter);
 
     useEffect(() => {
         setChapters(JSON.parse(JSON.stringify(data)));
@@ -23,32 +22,30 @@ const ChapterList = ({ onPickChapter, pickedChapter }: Props) => {
 
     return (
         <List>
-            {chapters.map((chapter) => (
-                <ListItem key={chapter.id}>
+            {chapters.map((item) => (
+                <ListItem key={item.id}>
                     <Button
                         variant="ghost"
                         colorScheme="modblue"
                         width="260px"
-                        isActive={pickedChapter === chapter.id}
+                        isActive={item.id === chapter}
                         leftIcon={
                             <Center bgColor="modblue.200" width="25px" height="25px" borderRadius="5px">
                                 <Text as="b" color="chakra-body-bg">
-                                    {chapter.chapter}
+                                    {item.chapter}
                                 </Text>
                             </Center>
                         }
-                        onClick={
-                            pickedChapter === chapter.id ? () => onPickChapter(0) : () => onPickChapter(chapter.id)
-                        }
+                        onClick={item.id === chapter ? () => setChapter(0) : () => setChapter(item.id)}
                     >
                         <Text
                             width="260px"
                             align="left"
                             color="chakra-body-text"
-                            opacity={pickedChapter === chapter.id ? 1 : 0.75}
+                            opacity={item.id === chapter ? 1 : 0.75}
                             fontWeight="normal"
                         >
-                            {chapter.title}
+                            {item.title}
                         </Text>
                     </Button>
                 </ListItem>

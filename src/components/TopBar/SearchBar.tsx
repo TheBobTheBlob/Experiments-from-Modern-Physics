@@ -1,38 +1,29 @@
+import { Button, Input, InputGroup, InputLeftElement, InputRightElement, Kbd, Show } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { Input, InputGroup, InputLeftElement, InputRightElement, Kbd, Show, Button } from "@chakra-ui/react";
 import { Search } from "react-feather";
 import { useHotkeys } from "react-hotkeys-hook";
 
-interface Props {
-    onSearch: (searchText: string) => void;
-}
+import { useSearchStore } from "../../Consts";
 
-const SearchBar = ({ onSearch }: Props) => {
-    const ref = useRef<HTMLInputElement>(null);
-    const [value, setValue] = useState("");
+const SearchBar = () => {
+    const searchRef = useRef<HTMLInputElement>(null);
+
     const [seeShortcut, setSeeShortcut] = useState(true);
+
+    const search = useSearchStore((store) => store.search);
+    const setSearch = useSearchStore((store) => store.setSearch);
 
     useHotkeys(
         "ctrl+k",
         () => {
-            ref.current?.focus();
+            searchRef.current?.focus();
         },
         { preventDefault: true }
     );
 
-    const updateSearch = (text: string) => {
-        onSearch(text);
-        setValue(text);
-    };
-
     return (
         <form
             style={{ width: "100%" }}
-            onInput={() => {
-                if (ref.current) {
-                    updateSearch(ref.current.value);
-                }
-            }}
             onSubmit={(event) => event.preventDefault()}
             onFocus={() => setSeeShortcut(false)}
             onBlur={() => setSeeShortcut(true)}
@@ -42,8 +33,10 @@ const SearchBar = ({ onSearch }: Props) => {
                     <Search />
                 </InputLeftElement>
                 <Input
-                    ref={ref}
+                    ref={searchRef}
                     placeholder="Search experiments..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                     name="search"
                     variant="filled"
                     colorScheme="modblue"
@@ -51,24 +44,14 @@ const SearchBar = ({ onSearch }: Props) => {
                 />
                 <Show above="lg">
                     {seeShortcut && (
-                        <InputRightElement paddingRight={value ? "155px" : "40px"} pointerEvents="none">
+                        <InputRightElement paddingRight={search ? "155px" : "40px"} pointerEvents="none">
                             <Kbd>Ctrl</Kbd>
                             <Kbd>K</Kbd>
                         </InputRightElement>
                     )}
-                    {value && (
+                    {search && (
                         <InputRightElement width="115px">
-                            <Button
-                                variant="ghost"
-                                colorScheme="modblue"
-                                onClick={() => {
-                                    if (ref.current) {
-                                        ref.current.value = "";
-                                        updateSearch(ref.current.value);
-                                        ref.current.focus();
-                                    }
-                                }}
-                            >
+                            <Button variant="ghost" colorScheme="modblue" onClick={() => setSearch("")}>
                                 Clear search
                             </Button>
                         </InputRightElement>

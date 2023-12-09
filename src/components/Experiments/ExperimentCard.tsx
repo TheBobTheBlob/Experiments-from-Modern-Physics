@@ -1,13 +1,17 @@
-import { Badge, Button, Card, CardBody, CardFooter, HStack, Heading, Image, Text, Flex } from "@chakra-ui/react";
+import { Badge, Button, Card, CardBody, CardFooter, Flex, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { ExternalLink } from "react-feather";
 
+import { useChapterStore } from "../../Consts";
 import { Experiment } from "./ExperimentGrid";
 
+// Forces links to open in new tab
 export const openInNewTab = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
 };
 
+// Converts an integer into a minutes and seconds
+// Eg. 78 -> 1m 16s
 export const intToTime = (time: number) => {
     let minutes = Math.floor(time / 60).toString();
     let seconds = (time % 60).toString().padStart(2, "0");
@@ -18,21 +22,23 @@ export const intToTime = (time: number) => {
 
 interface Props {
     experiment: Experiment;
-    onPickChapter: (chapter: number) => void;
 }
 
-const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
+const ExperimentCard = ({ experiment }: Props) => {
+    const setChapter = useChapterStore((state) => state.setChapter);
+
     return (
         <Card>
             <Image
                 src={`/thumbnails/${experiment.id}.webp`}
                 borderTopRadius="5px"
-                aspectRatio="16 / 9"
-                alt={`Thumbnail of experiment ${experiment.id} video`}
+                aspectRatio="16 / 9" // Helps avoid content shifts as image loads
+                alt={`Experiment ${experiment.id} thumbnail`}
             />
+
             <CardBody padding="10px">
                 <HStack marginTop="10px">
-                    <Badge onClick={() => onPickChapter(experiment.chapter)} cursor="pointer">
+                    <Badge onClick={() => setChapter(experiment.chapter)} cursor="pointer">
                         Chapter {experiment.chapter}
                     </Badge>
                     <Badge onClick={() => openInNewTab(experiment.channelLink)} cursor="pointer">
@@ -42,11 +48,14 @@ const ExperimentCard = ({ experiment, onPickChapter }: Props) => {
                         </Flex>
                     </Badge>
                 </HStack>
+
                 <Heading size="md" marginTop="10px">
                     {experiment.title}
                 </Heading>
+
                 <Text marginTop="10px">{experiment.description}</Text>
             </CardBody>
+
             <CardFooter padding="10px">
                 <Button
                     variant="solid"

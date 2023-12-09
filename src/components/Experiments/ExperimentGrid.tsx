@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
 import { SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+
+import { useChapterStore, useCountStore, useSearchStore, useSortStore } from "../../Consts";
 
 import ExperimentCard from "./ExperimentCard";
 import ExperimentCardSkeleton from "./ExperimentCardSkeleton";
@@ -17,31 +19,29 @@ export interface Experiment {
     description: string;
 }
 
-interface Props {
-    chapter: number;
-    search: string;
-    sort: string;
-    onPickChapter: (chapter: number) => void;
-    onTotalChange: (experiments: number) => void;
-    onVisibleChange: (experiments: number) => void;
-}
-
 export const sortString = (string1: string, string2: string) => {
     if (string1 > string2) return 1;
     if (string1 < string2) return -1;
     return 0;
 };
 
-const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, onVisibleChange }: Props) => {
+const ExperimentGrid = () => {
     let json = JSON.parse(JSON.stringify(data));
 
     const [experiments, setExperiments] = useState<Experiment[]>([]);
 
+    const chapter = useChapterStore((state) => state.chapter);
+    const sort = useSortStore((state) => state.sort);
+    const search = useSearchStore((state) => state.search);
+
+    const setVisibleCount = useCountStore((state) => state.setVisibleCount);
+    const setTotalCount = useCountStore((state) => state.setTotalCount);
+
     const [loading, setLoading] = useState(true);
-    const skeletons = [1, 2, 3, 4, 5, 6];
+    const skeletons = [1, 2, 3, 4, 5, 6]; // Array to help with skeleton generation
 
     useEffect(() => {
-        onTotalChange(json.length);
+        setTotalCount(json.length);
     }, []);
 
     useEffect(() => {
@@ -49,12 +49,12 @@ const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, o
 
         if (chapter > 0) json = json.filter((experiment: Experiment) => experiment.chapter === chapter);
         if (search) {
-            search = search.toLowerCase();
+            const searchLC = search.toLowerCase();
             json = json.filter(
                 (experiment: Experiment) =>
-                    experiment.title.toLowerCase().includes(search) ||
-                    experiment.description.toLowerCase().includes(search) ||
-                    experiment.channel.toLowerCase().includes(search)
+                    experiment.title.toLowerCase().includes(searchLC) ||
+                    experiment.description.toLowerCase().includes(searchLC) ||
+                    experiment.channel.toLowerCase().includes(searchLC)
             );
         }
 
@@ -68,7 +68,7 @@ const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, o
             );
         }
 
-        onVisibleChange(json.length);
+        setVisibleCount(json.length);
         setExperiments(json);
 
         setLoading(false);
@@ -83,13 +83,7 @@ const ExperimentGrid = ({ chapter, search, sort, onPickChapter, onTotalChange, o
         >
             {loading
                 ? skeletons.map((skeleton) => <ExperimentCardSkeleton key={skeleton} />)
-                : experiments.map((experiment) => (
-                      <ExperimentCard
-                          key={experiment.id}
-                          experiment={experiment}
-                          onPickChapter={(chapter) => onPickChapter(chapter)}
-                      />
-                  ))}
+                : experiments.map((experiment) => <ExperimentCard key={experiment.id} experiment={experiment} />)}
         </SimpleGrid>
     );
 };
