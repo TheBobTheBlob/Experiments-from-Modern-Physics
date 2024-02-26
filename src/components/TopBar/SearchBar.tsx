@@ -51,7 +51,14 @@ const SearchBar = () => {
                     )}
                     {search && (
                         <InputRightElement width="115px">
-                            <Button variant="ghost" colorScheme="modblue" onClick={() => setSearch("")}>
+                            <Button
+                                variant="ghost"
+                                colorScheme="modblue"
+                                onClick={() => {
+                                    setSearch("");
+                                    setSeeShortcut(true);
+                                }}
+                            >
                                 Clear search
                             </Button>
                         </InputRightElement>

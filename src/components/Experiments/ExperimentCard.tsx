@@ -13,8 +13,8 @@ export const openInNewTab = (url: string) => {
 // Converts an integer into a minutes and seconds
 // Eg. 78 -> 1m 16s
 export const intToTime = (time: number) => {
-    let minutes = Math.floor(time / 60).toString();
-    let seconds = (time % 60).toString().padStart(2, "0");
+    const minutes = Math.floor(time / 60).toString();
+    const seconds = (time % 60).toString().padStart(2, "0");
 
     if (minutes === "0") return `${seconds}s`;
     else return `${minutes}m ${seconds}s`;

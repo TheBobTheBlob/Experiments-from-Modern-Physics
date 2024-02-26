@@ -16,10 +16,9 @@ function App() {
                 area="nav"
                 bg="chakra-body-bg"
                 padding="10px"
+                paddingRight={{ base: "10px", lg: "25px" }}
                 position="fixed"
-                top="0"
-                left="0"
-                right="0"
+                width="100vw"
                 zIndex="1"
             >
                 <NavBar />
