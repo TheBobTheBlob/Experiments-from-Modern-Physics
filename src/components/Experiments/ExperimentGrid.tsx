@@ -19,15 +19,13 @@ export interface Experiment {
     description: string;
 }
 
-export const sortString = (string1: string, string2: string) => {
+const sortString = (string1: string, string2: string) => {
     if (string1 > string2) return 1;
     if (string1 < string2) return -1;
     return 0;
 };
 
 const ExperimentGrid = () => {
-    let json = JSON.parse(JSON.stringify(data));
-
     const [experiments, setExperiments] = useState<Experiment[]>([]);
 
     const chapter = useChapterStore((state) => state.chapter);
@@ -41,11 +39,12 @@ const ExperimentGrid = () => {
     const skeletons = [1, 2, 3, 4, 5, 6]; // Array to help with skeleton generation
 
     useEffect(() => {
-        setTotalCount(json.length);
-    }, []);
+        setTotalCount(data.length);
+    }, [setTotalCount]);
 
     useEffect(() => {
         setLoading(true);
+        let json = [...data];
 
         if (chapter > 0) json = json.filter((experiment: Experiment) => experiment.chapter === chapter);
         if (search) {
@@ -72,7 +71,7 @@ const ExperimentGrid = () => {
         setExperiments(json);
 
         setLoading(false);
-    }, [chapter, search, sort]);
+    }, [chapter, search, sort, setVisibleCount]);
 
     return (
         <SimpleGrid

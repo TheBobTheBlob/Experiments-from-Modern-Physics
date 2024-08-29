@@ -5,14 +5,14 @@ import { useChapterStore } from "../../Consts";
 import { Experiment } from "./ExperimentGrid";
 
 // Forces links to open in new tab
-export const openInNewTab = (url: string) => {
+const openInNewTab = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
 };
 
 // Converts an integer into a minutes and seconds
 // Eg. 78 -> 1m 16s
-export const intToTime = (time: number) => {
+const intToTime = (time: number) => {
     const minutes = Math.floor(time / 60).toString();
     const seconds = (time % 60).toString().padStart(2, "0");
 
