@@ -40,3 +40,21 @@ npm run preview
 ```
 
 Due to way `vite` works, it is not possible to view the compiled `index.html` locally by opening it directly. The only way is using the preview command above.
+
+## Testing
+
+Tests are written using `playwright` and are situated inside the `tests` folder. They can be run using `npx` commands.
+
+```bash
+# Run all tests
+npx playwright test
+
+# Open test runner UI
+npx playwright test --ui
+
+# Show results after tests are run
+npx playwright show-report
+
+# Open test code generator
+npx playwright codegen
+```
