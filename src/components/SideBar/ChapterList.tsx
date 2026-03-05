@@ -20,22 +20,29 @@ const ChapterList = () => {
     }, []);
 
     return (
-        <ul className="list-none p-0 m-0">
+        <ul className="list-none p-0 m-0 space-y-0.5">
             {chapters.map((item) => (
                 <li key={item.id}>
                     <button
-                        className={`flex items-center gap-2 w-[260px] px-3 py-2 rounded-md text-left
-                            transition-colors cursor-pointer
-                            hover:bg-modblue-50 dark:hover:bg-modblue-900
-                            ${item.id === chapter ? "bg-modblue-50 dark:bg-modblue-900" : "bg-transparent"}`}
+                        className={`flex items-center gap-3 w-[260px] px-3 py-2 rounded-lg text-left
+                            transition-all duration-200 cursor-pointer
+                            hover:bg-accent-blue/8 dark:hover:bg-accent-blue/15
+                            ${item.id === chapter
+                                ? "bg-accent-blue/10 dark:bg-accent-blue/20"
+                                : "bg-transparent"}`}
                         onClick={item.id === chapter ? () => setChapter(0) : () => setChapter(item.id)}
                     >
-                        <span className="flex items-center justify-center bg-modblue-200 w-[25px] h-[25px] rounded-[5px] shrink-0">
-                            <span className="font-bold text-white dark:text-gray-900 text-sm">{item.chapter}</span>
+                        <span className={`flex items-center justify-center w-[26px] h-[26px] rounded-md shrink-0 text-sm font-bold text-white
+                            ${item.id === chapter
+                                ? "bg-gradient-to-br from-accent-blue to-accent-indigo"
+                                : "bg-gradient-to-br from-accent-blue/70 to-accent-indigo/70"}`}>
+                            {item.chapter}
                         </span>
                         <span
-                            className={`text-left text-sm text-gray-900 dark:text-gray-100
-                                ${item.id === chapter ? "opacity-100" : "opacity-75"}`}
+                            className={`text-left text-sm
+                                ${item.id === chapter
+                                    ? "text-slate-900 dark:text-slate-100 font-medium"
+                                    : "text-slate-600 dark:text-slate-400"}`}
                         >
                             {item.title}
                         </span>

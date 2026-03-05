@@ -16,7 +16,7 @@ const NavBar = () => {
                 onClick={() => setChapter(0)}
                 alt="logo"
             />
-            <h2 className="hidden lg:block text-sm font-bold whitespace-nowrap text-modblue-200">
+            <h2 className="hidden lg:block text-sm font-bold whitespace-nowrap text-accent-blue dark:text-blue-400">
                 Experiments from Modern Physics
             </h2>
             <SearchBar />

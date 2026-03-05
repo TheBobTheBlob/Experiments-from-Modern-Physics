@@ -27,45 +27,56 @@ const ExperimentCard = ({ experiment }: Props) => {
     const setChapter = useChapterStore((state) => state.setChapter);
 
     return (
-        <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="rounded-2xl border border-border-light dark:border-border-dark
+            bg-surface-card-light dark:bg-surface-card-dark overflow-hidden card-glow">
             <img
                 src={`/thumbnails/${experiment.id}.webp`}
                 className="w-full aspect-video object-cover"
                 alt={`Experiment ${experiment.id} thumbnail`}
             />
 
-            <div className="p-2.5">
-                <div className="flex items-center gap-2 mt-2.5">
+            <div className="p-4">
+                <div className="flex items-center gap-2 mb-3">
                     <span
-                        className="px-2 py-0.5 text-xs font-semibold rounded bg-gray-100 dark:bg-gray-700
-                            text-gray-700 dark:text-gray-300 cursor-pointer
-                            hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                        className="px-2.5 py-1 text-xs font-semibold rounded-full
+                            bg-accent-violet/10 dark:bg-accent-violet/20
+                            text-accent-violet dark:text-violet-400 cursor-pointer
+                            hover:bg-accent-violet/20 dark:hover:bg-accent-violet/30 transition-colors"
                         onClick={() => setChapter(experiment.chapter)}
                     >
                         Chapter {experiment.chapter}
                     </span>
                     <span
-                        className="px-2 py-0.5 text-xs font-semibold rounded bg-gray-100 dark:bg-gray-700
-                            text-gray-700 dark:text-gray-300 cursor-pointer
-                            hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                        className="px-2.5 py-1 text-xs font-semibold rounded-full
+                            bg-accent-cyan/10 dark:bg-accent-cyan/20
+                            text-accent-cyan dark:text-cyan-400 cursor-pointer
+                            hover:bg-accent-cyan/20 dark:hover:bg-accent-cyan/30 transition-colors"
                         onClick={() => openInNewTab(experiment.channelLink)}
                     >
                         <span className="flex items-center gap-1">
                             {experiment.channel}
-                            <ExternalLink width="15px" height="15px" />
+                            <ExternalLink width="12px" height="12px" />
                         </span>
                     </span>
                 </div>
 
-                <h3 className="text-lg font-bold mt-2.5 text-gray-900 dark:text-gray-100">{experiment.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {experiment.title}
+                </h3>
 
-                <p className="mt-2.5 text-sm text-gray-700 dark:text-gray-300">{experiment.description}</p>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {experiment.description}
+                </p>
             </div>
 
-            <div className="p-2.5">
+            <div className="px-4 pb-4">
                 <button
-                    className="flex items-center gap-2 px-4 py-2 rounded-md bg-modblue-500 text-white
-                        hover:bg-modblue-600 transition-colors font-medium cursor-pointer"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl
+                        bg-gradient-to-r from-accent-blue to-accent-indigo
+                        text-white font-medium cursor-pointer
+                        hover:brightness-110 hover:shadow-lg hover:shadow-accent-blue/30
+                        shadow-md shadow-accent-blue/20
+                        transition-all duration-300"
                     onClick={() => openInNewTab(experiment.link)}
                 >
                     <ExternalLink size={16} />

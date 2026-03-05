@@ -6,9 +6,9 @@ import NavBar from "./components/TopBar/NavBar";
 
 function App() {
     return (
-        <div className="min-h-screen">
-            {/* Nav - fixed top */}
-            <div className="bg-white dark:bg-gray-900 p-2.5 pr-2.5 lg:pr-6 fixed w-full z-10">
+        <div className="min-h-screen mesh-bg">
+            {/* Nav - fixed top, glassmorphism */}
+            <div className="glass-nav p-2.5 pr-2.5 lg:pr-6 fixed w-full z-10 border-b border-border-light dark:border-border-dark">
                 <NavBar />
             </div>
 
@@ -25,7 +25,7 @@ function App() {
 
             {/* Footer */}
             <div className="lg:ml-[300px] px-2.5 pt-8">
-                <hr className="border-gray-200 dark:border-gray-700" />
+                <hr className="border-border-light dark:border-border-dark" />
                 <Footer />
             </div>
         </div>

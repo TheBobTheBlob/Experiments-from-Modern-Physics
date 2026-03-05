@@ -15,30 +15,32 @@ const GridTitleDesktop = () => {
 
     return (
         <div className="flex items-center mx-2.5 my-5 gap-5">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 {chapter === 0 ? "All Experiments" : `Chapter ${chapter} Experiments`}
             </h1>
             {chapter !== 0 && (
                 <button
                     onClick={() => setChapter(0)}
-                    className="text-modblue-500 hover:bg-modblue-50 dark:text-modblue-300 dark:hover:bg-modblue-900
-                        px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer"
+                    className="text-accent-blue hover:bg-accent-blue/10 dark:text-blue-400 dark:hover:bg-accent-blue/15
+                        px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
                 >
                     Clear filter
                 </button>
             )}
             <div className="flex-1" />
 
-            <span className="text-sm opacity-75 text-right text-gray-900 dark:text-gray-100">
+            <span className="text-sm text-slate-500 dark:text-slate-400 text-right">
                 Showing {visibleCount} of {totalCount}
             </span>
 
             <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                     <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800
-                        text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700
-                        transition-colors font-medium cursor-pointer"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl
+                        bg-surface-elevated-light dark:bg-surface-elevated-dark
+                        border border-border-light dark:border-border-dark
+                        text-slate-700 dark:text-slate-300 hover:border-accent-blue/30
+                        transition-all font-medium cursor-pointer"
                     >
                         Sort by: {sort.charAt(0).toUpperCase() + sort.slice(1)}
                         <ChevronDown size={16} />
@@ -46,31 +48,33 @@ const GridTitleDesktop = () => {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Portal>
                     <DropdownMenu.Content
-                        className="bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200
-                            dark:border-gray-700 py-1 min-w-[150px] z-50"
+                        className="bg-white dark:bg-slate-800 rounded-xl shadow-lg
+                            border border-border-light dark:border-border-dark
+                            py-1.5 min-w-[150px] z-50
+                            backdrop-blur-xl"
                         align="end"
                         sideOffset={5}
                     >
                         <DropdownMenu.Item
-                            className="px-3 py-2 text-sm cursor-pointer outline-none
-                                hover:bg-modblue-50 dark:hover:bg-modblue-900
-                                text-gray-900 dark:text-gray-100"
+                            className="px-3 py-2 text-sm cursor-pointer outline-none rounded-lg mx-1
+                                hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15
+                                text-slate-700 dark:text-slate-300"
                             onSelect={() => setSort("chapter")}
                         >
                             Chapter
                         </DropdownMenu.Item>
                         <DropdownMenu.Item
-                            className="px-3 py-2 text-sm cursor-pointer outline-none
-                                hover:bg-modblue-50 dark:hover:bg-modblue-900
-                                text-gray-900 dark:text-gray-100"
+                            className="px-3 py-2 text-sm cursor-pointer outline-none rounded-lg mx-1
+                                hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15
+                                text-slate-700 dark:text-slate-300"
                             onSelect={() => setSort("title")}
                         >
                             Title
                         </DropdownMenu.Item>
                         <DropdownMenu.Item
-                            className="px-3 py-2 text-sm cursor-pointer outline-none
-                                hover:bg-modblue-50 dark:hover:bg-modblue-900
-                                text-gray-900 dark:text-gray-100"
+                            className="px-3 py-2 text-sm cursor-pointer outline-none rounded-lg mx-1
+                                hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15
+                                text-slate-700 dark:text-slate-300"
                             onSelect={() => setSort("duration")}
                         >
                             Duration
