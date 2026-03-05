@@ -103,16 +103,7 @@ body {
     pointer-events: none;
 }
 
-/* Glassmorphism nav */
-.glass-nav {
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: transparent;
-}
 
-.dark .glass-nav {
-    background: transparent;
-}
 
 /* Subtle background mesh gradient */
 .mesh-bg {
