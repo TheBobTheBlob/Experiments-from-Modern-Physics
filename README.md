@@ -13,7 +13,7 @@ The chapters correspond to *Modern Physics For Scientists and Engineers (4th Edi
 The following `node.js` libraries are required.
 
 - `react`: Front-end javascript framework
-- `chakra-ui`: UI component library
+- `radix-ui`: Headless UI library
 - `react-feather`: Icon pack
 - `react-hotkeys-hook`: React plugin for shortcut keys
 - `zustand`: Global state variables
