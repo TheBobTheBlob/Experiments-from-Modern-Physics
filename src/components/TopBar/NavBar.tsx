@@ -1,4 +1,3 @@
-import { HStack, Heading, Image, Show } from "@chakra-ui/react";
 import logo from "../../assets/logo.webp";
 
 import { useChapterStore } from "../../Consts";
@@ -9,22 +8,19 @@ const NavBar = () => {
     const setChapter = useChapterStore((state) => state.setChapter);
 
     return (
-        <HStack spacing="5">
-            <Image
+        <div className="flex items-center gap-5">
+            <img
                 src={logo}
                 title="logo"
-                boxSize="40px"
-                padding="3px 0px 3px 3px"
+                className="w-10 h-10 p-[3px] cursor-pointer"
                 onClick={() => setChapter(0)}
-                cursor="pointer"
+                alt="logo"
             />
-            <Show above="lg">
-                <Heading size="sm" whiteSpace="nowrap" color="modblue.200">
-                    Experiments from Modern Physics
-                </Heading>
-            </Show>
+            <h2 className="hidden lg:block text-sm font-bold whitespace-nowrap text-modblue-200">
+                Experiments from Modern Physics
+            </h2>
             <SearchBar />
-        </HStack>
+        </div>
     );
 };
 

@@ -1,19 +1,20 @@
-import { Center, HStack, Heading, Link } from "@chakra-ui/react";
 import { GitHub } from "react-feather";
 
 const Footer = () => {
     return (
-        <Center>
-            <Heading size="sm" padding="30px 0px">
-                Created by&nbsp;
-            </Heading>
-            <Link isExternal={true} href="https://github.com/TheBobTheBlob/Experiments-from-Modern-Physics">
-                <HStack>
-                    <Heading size="sm">Punit Turlapati</Heading>
-                    <GitHub />
-                </HStack>
-            </Link>
-        </Center>
+        <div className="flex items-center justify-center py-8">
+            <span className="text-sm font-bold text-gray-900 dark:text-gray-100">Created by&nbsp;</span>
+            <a
+                href="https://github.com/TheBobTheBlob/Experiments-from-Modern-Physics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-sm font-bold text-gray-900 dark:text-gray-100
+                    hover:text-modblue-500 dark:hover:text-modblue-300 transition-colors"
+            >
+                Punit Turlapati
+                <GitHub size={16} />
+            </a>
+        </div>
     );
 };
 

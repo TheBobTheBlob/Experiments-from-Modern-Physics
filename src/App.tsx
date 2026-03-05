@@ -1,5 +1,3 @@
-import { Divider, Grid, GridItem } from "@chakra-ui/react";
-
 import ExperimentGrid from "./components/Experiments/ExperimentGrid";
 import Footer from "./components/Footer";
 import GridTitle from "./components/GridTitle/GridTitle";
@@ -8,36 +6,29 @@ import NavBar from "./components/TopBar/NavBar";
 
 function App() {
     return (
-        <Grid
-            templateAreas={{ base: `"nav" "main" "footer"`, lg: `"nav nav" "sidebar main" "sidebar footer"` }}
-            templateColumns={{ base: "1fr", lg: "300px 1fr" }}
-        >
-            <GridItem
-                area="nav"
-                bg="chakra-body-bg"
-                padding="10px"
-                paddingRight={{ base: "10px", lg: "25px" }}
-                position="fixed"
-                width="100vw"
-                zIndex="1"
-            >
+        <div className="min-h-screen">
+            {/* Nav - fixed top */}
+            <div className="bg-white dark:bg-gray-900 p-2.5 pr-2.5 lg:pr-6 fixed w-full z-10">
                 <NavBar />
-            </GridItem>
+            </div>
 
-            <GridItem area="sidebar" padding="20px 5px 10px 10px" position="fixed" top="50px" left="0">
+            {/* Sidebar - fixed left, desktop only */}
+            <div className="hidden lg:block py-5 px-2.5 fixed top-[50px] left-0 w-[300px]">
                 <SideBar />
-            </GridItem>
+            </div>
 
-            <GridItem area="main" marginTop="50px" minHeight="75vh">
+            {/* Main content */}
+            <div className="pt-[50px] lg:ml-[300px] min-h-[75vh]">
                 <GridTitle />
                 <ExperimentGrid />
-            </GridItem>
+            </div>
 
-            <GridItem area="footer" padding="30px 10px 0px 10px">
-                <Divider />
+            {/* Footer */}
+            <div className="lg:ml-[300px] px-2.5 pt-8">
+                <hr className="border-gray-200 dark:border-gray-700" />
                 <Footer />
-            </GridItem>
-        </Grid>
+            </div>
+        </div>
     );
 }
 

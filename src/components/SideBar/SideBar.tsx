@@ -1,17 +1,13 @@
-import { Box, Heading, Show } from "@chakra-ui/react";
-
 import ChapterList from "./ChapterList";
 
 const SideBar = () => {
     return (
-        <Show above="lg">
-            <Heading size="sm" padding="10px 0px 10px 15px">
-                Filter by Chapter
-            </Heading>
-            <Box overflowY="auto" maxHeight="calc(100vh - 120px)" paddingRight="5px">
+        <>
+            <h3 className="text-sm font-bold py-2.5 pl-4">Filter by Chapter</h3>
+            <div className="overflow-y-auto max-h-[calc(100vh-120px)] pr-1">
                 <ChapterList />
-            </Box>
-        </Show>
+            </div>
+        </>
     );
 };
 

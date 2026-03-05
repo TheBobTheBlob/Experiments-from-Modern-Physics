@@ -1,4 +1,4 @@
-import { Button, HStack, Heading, Menu, MenuButton, MenuItem, MenuList, Spacer, Text } from "@chakra-ui/react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "react-feather";
 
 import { useChapterStore, useCountStore, useSortStore } from "../../Consts";
@@ -14,30 +14,71 @@ const GridTitleDesktop = () => {
     const totalCount = useCountStore((state) => state.totalCount);
 
     return (
-        <HStack margin="20px 10px 20px 10px" spacing="20px">
-            <Heading>{chapter === 0 ? "All Experiments" : `Chapter ${chapter} Experiments`}</Heading>
+        <div className="flex items-center mx-2.5 my-5 gap-5">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                {chapter === 0 ? "All Experiments" : `Chapter ${chapter} Experiments`}
+            </h1>
             {chapter !== 0 && (
-                <Button onClick={() => setChapter(0)} colorScheme="modblue" variant="ghost">
+                <button
+                    onClick={() => setChapter(0)}
+                    className="text-modblue-500 hover:bg-modblue-50 dark:text-modblue-300 dark:hover:bg-modblue-900
+                        px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer"
+                >
                     Clear filter
-                </Button>
+                </button>
             )}
-            <Spacer />
+            <div className="flex-1" />
 
-            <Text fontSize="sm" opacity="0.75" textAlign="right">
+            <span className="text-sm opacity-75 text-right text-gray-900 dark:text-gray-100">
                 Showing {visibleCount} of {totalCount}
-            </Text>
+            </span>
 
-            <Menu variant="filled" colorScheme="modblue" placement="bottom-end">
-                <MenuButton as={Button} rightIcon={<ChevronDown />}>
-                    Sort by: {sort.charAt(0).toUpperCase() + sort.slice(1)}
-                </MenuButton>
-                <MenuList>
-                    <MenuItem onClick={() => setSort("chapter")}>Chapter</MenuItem>
-                    <MenuItem onClick={() => setSort("title")}>Title</MenuItem>
-                    <MenuItem onClick={() => setSort("duration")}>Duration</MenuItem>
-                </MenuList>
-            </Menu>
-        </HStack>
+            <DropdownMenu.Root modal={false}>
+                <DropdownMenu.Trigger asChild>
+                    <button
+                        className="flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800
+                        text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700
+                        transition-colors font-medium cursor-pointer"
+                    >
+                        Sort by: {sort.charAt(0).toUpperCase() + sort.slice(1)}
+                        <ChevronDown size={16} />
+                    </button>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Portal>
+                    <DropdownMenu.Content
+                        className="bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200
+                            dark:border-gray-700 py-1 min-w-[150px] z-50"
+                        align="end"
+                        sideOffset={5}
+                    >
+                        <DropdownMenu.Item
+                            className="px-3 py-2 text-sm cursor-pointer outline-none
+                                hover:bg-modblue-50 dark:hover:bg-modblue-900
+                                text-gray-900 dark:text-gray-100"
+                            onSelect={() => setSort("chapter")}
+                        >
+                            Chapter
+                        </DropdownMenu.Item>
+                        <DropdownMenu.Item
+                            className="px-3 py-2 text-sm cursor-pointer outline-none
+                                hover:bg-modblue-50 dark:hover:bg-modblue-900
+                                text-gray-900 dark:text-gray-100"
+                            onSelect={() => setSort("title")}
+                        >
+                            Title
+                        </DropdownMenu.Item>
+                        <DropdownMenu.Item
+                            className="px-3 py-2 text-sm cursor-pointer outline-none
+                                hover:bg-modblue-50 dark:hover:bg-modblue-900
+                                text-gray-900 dark:text-gray-100"
+                            onSelect={() => setSort("duration")}
+                        >
+                            Duration
+                        </DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                </DropdownMenu.Portal>
+            </DropdownMenu.Root>
+        </div>
     );
 };
 

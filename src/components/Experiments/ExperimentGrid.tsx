@@ -1,4 +1,3 @@
-import { SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import { useChapterStore, useCountStore, useSearchStore, useSortStore } from "../../Consts";
@@ -53,7 +52,7 @@ const ExperimentGrid = () => {
                 (experiment: Experiment) =>
                     experiment.title.toLowerCase().includes(searchLC) ||
                     experiment.description.toLowerCase().includes(searchLC) ||
-                    experiment.channel.toLowerCase().includes(searchLC)
+                    experiment.channel.toLowerCase().includes(searchLC),
             );
         }
 
@@ -63,7 +62,7 @@ const ExperimentGrid = () => {
             json = json.sort((a: Experiment, b: Experiment) => a.duration - b.duration);
         } else {
             json = json.sort((a: Experiment, b: Experiment) =>
-                sortString(a.title.toLowerCase(), b.title.toLowerCase())
+                sortString(a.title.toLowerCase(), b.title.toLowerCase()),
             );
         }
 
@@ -74,16 +73,14 @@ const ExperimentGrid = () => {
     }, [chapter, search, sort, setVisibleCount]);
 
     return (
-        <SimpleGrid
-            padding="10px"
-            spacing="30px"
-            gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
-            justifyContent="space-between"
+        <div
+            className="grid p-2.5 gap-8 justify-between"
+            style={{ gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))" }}
         >
             {loading
                 ? skeletons.map((skeleton) => <ExperimentCardSkeleton key={skeleton} />)
                 : experiments.map((experiment) => <ExperimentCard key={experiment.id} experiment={experiment} />)}
-        </SimpleGrid>
+        </div>
     );
 };
 

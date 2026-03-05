@@ -1,4 +1,3 @@
-import { Badge, Button, Card, CardBody, CardFooter, Flex, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { ExternalLink } from "react-feather";
 
 import { useChapterStore } from "../../Consts";
@@ -28,45 +27,52 @@ const ExperimentCard = ({ experiment }: Props) => {
     const setChapter = useChapterStore((state) => state.setChapter);
 
     return (
-        <Card>
-            <Image
+        <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <img
                 src={`/thumbnails/${experiment.id}.webp`}
-                borderTopRadius="5px"
-                aspectRatio="16 / 9" // Helps avoid content shifts as image loads
+                className="w-full aspect-video object-cover"
                 alt={`Experiment ${experiment.id} thumbnail`}
             />
 
-            <CardBody padding="10px">
-                <HStack marginTop="10px">
-                    <Badge onClick={() => setChapter(experiment.chapter)} cursor="pointer">
+            <div className="p-2.5">
+                <div className="flex items-center gap-2 mt-2.5">
+                    <span
+                        className="px-2 py-0.5 text-xs font-semibold rounded bg-gray-100 dark:bg-gray-700
+                            text-gray-700 dark:text-gray-300 cursor-pointer
+                            hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                        onClick={() => setChapter(experiment.chapter)}
+                    >
                         Chapter {experiment.chapter}
-                    </Badge>
-                    <Badge onClick={() => openInNewTab(experiment.channelLink)} cursor="pointer">
-                        <Flex alignItems="center" gap="5px">
+                    </span>
+                    <span
+                        className="px-2 py-0.5 text-xs font-semibold rounded bg-gray-100 dark:bg-gray-700
+                            text-gray-700 dark:text-gray-300 cursor-pointer
+                            hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                        onClick={() => openInNewTab(experiment.channelLink)}
+                    >
+                        <span className="flex items-center gap-1">
                             {experiment.channel}
                             <ExternalLink width="15px" height="15px" />
-                        </Flex>
-                    </Badge>
-                </HStack>
+                        </span>
+                    </span>
+                </div>
 
-                <Heading size="md" marginTop="10px">
-                    {experiment.title}
-                </Heading>
+                <h3 className="text-lg font-bold mt-2.5 text-gray-900 dark:text-gray-100">{experiment.title}</h3>
 
-                <Text marginTop="10px">{experiment.description}</Text>
-            </CardBody>
+                <p className="mt-2.5 text-sm text-gray-700 dark:text-gray-300">{experiment.description}</p>
+            </div>
 
-            <CardFooter padding="10px">
-                <Button
-                    variant="solid"
-                    leftIcon={<ExternalLink />}
-                    colorScheme="modblue"
+            <div className="p-2.5">
+                <button
+                    className="flex items-center gap-2 px-4 py-2 rounded-md bg-modblue-500 text-white
+                        hover:bg-modblue-600 transition-colors font-medium cursor-pointer"
                     onClick={() => openInNewTab(experiment.link)}
                 >
+                    <ExternalLink size={16} />
                     Watch ({intToTime(experiment.duration)})
-                </Button>
-            </CardFooter>
-        </Card>
+                </button>
+            </div>
+        </div>
     );
 };
 

@@ -1,4 +1,3 @@
-import { Button, Input, InputGroup, InputLeftElement, InputRightElement, Kbd, Show } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { Search } from "react-feather";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -18,53 +17,56 @@ const SearchBar = () => {
         () => {
             searchRef.current?.focus();
         },
-        { preventDefault: true }
+        { preventDefault: true },
     );
 
     return (
         <form
-            style={{ width: "100%" }}
+            className="w-full"
             onSubmit={(event) => event.preventDefault()}
             onFocus={() => setSeeShortcut(false)}
             onBlur={() => setSeeShortcut(true)}
         >
-            <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                    <Search />
-                </InputLeftElement>
-                <Input
+            <div className="relative flex items-center">
+                <div className="absolute left-3 pointer-events-none text-gray-500 dark:text-gray-400">
+                    <Search size={18} />
+                </div>
+                <input
                     ref={searchRef}
                     placeholder="Search experiments..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     name="search"
-                    variant="filled"
-                    colorScheme="modblue"
-                    paddingRight={{ base: "0px", lg: seeShortcut ? "195px" : "120px" }}
+                    className="w-full pl-10 pr-4 lg:pr-[120px] py-2 rounded-md bg-gray-100 dark:bg-gray-800
+                        text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
+                        border border-transparent focus:border-modblue-400 focus:outline-none
+                        transition-colors"
                 />
-                <Show above="lg">
-                    {seeShortcut && (
-                        <InputRightElement paddingRight={search ? "155px" : "40px"} pointerEvents="none">
-                            <Kbd>Ctrl</Kbd>
-                            <Kbd>K</Kbd>
-                        </InputRightElement>
+                <div className="hidden lg:flex absolute right-3 items-center gap-2">
+                    {seeShortcut && !search && (
+                        <span className="flex items-center gap-1 pointer-events-none">
+                            <kbd className="px-1.5 py-0.5 text-xs rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+                                Ctrl
+                            </kbd>
+                            <kbd className="px-1.5 py-0.5 text-xs rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+                                K
+                            </kbd>
+                        </span>
                     )}
                     {search && (
-                        <InputRightElement width="115px">
-                            <Button
-                                variant="ghost"
-                                colorScheme="modblue"
-                                onClick={() => {
-                                    setSearch("");
-                                    setSeeShortcut(true);
-                                }}
-                            >
-                                Clear search
-                            </Button>
-                        </InputRightElement>
+                        <button
+                            type="button"
+                            className="text-sm text-modblue-500 hover:text-modblue-600 dark:text-modblue-300 dark:hover:text-modblue-200 font-medium cursor-pointer"
+                            onClick={() => {
+                                setSearch("");
+                                setSeeShortcut(true);
+                            }}
+                        >
+                            Clear search
+                        </button>
                     )}
-                </Show>
-            </InputGroup>
+                </div>
+            </div>
         </form>
     );
 };

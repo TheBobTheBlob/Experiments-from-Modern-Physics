@@ -1,17 +1,15 @@
-import { Show } from "@chakra-ui/react";
-
 import GridTitleDesktop from "./GridTitleDesktop";
 import GridTitleMobile from "./GridTitleMobile";
 
 const GridTitle = () => {
     return (
         <>
-            <Show above="lg">
+            <div className="hidden lg:block">
                 <GridTitleDesktop />
-            </Show>
-            <Show below="lg">
+            </div>
+            <div className="lg:hidden">
                 <GridTitleMobile />
-            </Show>
+            </div>
         </>
     );
 };

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+    --color-modblue-50: #e0f4ff;
+    --color-modblue-100: #b5dbfd;
+    --color-modblue-200: #4ea5ef;
+    --color-modblue-300: #5bacf0;
+    --color-modblue-400: #3194eb;
+    --color-modblue-500: #1a7ad1;
+    --color-modblue-600: #0f5fa4;
+    --color-modblue-700: #064476;
+    --color-modblue-800: #002949;
+    --color-modblue-900: #000f1d;
+}
+
+/* Skeleton animation */
+@keyframes skeleton-pulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-skeleton {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Base styles */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Radix dropdown menu styles */
+[data-radix-popper-content-wrapper] {
+    z-index: 10 !important;
+}
