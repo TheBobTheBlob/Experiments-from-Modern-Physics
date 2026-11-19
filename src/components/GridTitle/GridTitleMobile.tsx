@@ -48,8 +48,7 @@ const GridTitleMobile = () => {
                     <DropdownMenu.Content
                         className="bg-white dark:bg-slate-800 rounded-xl shadow-lg
                             border border-border-light dark:border-border-dark
-                            py-1.5 min-w-[200px] max-h-[300px] overflow-y-auto z-50
-                            backdrop-blur-xl"
+                            py-1.5 min-w-[200px] max-h-[300px] overflow-y-auto z-50"
                         sideOffset={5}
                     >
                         <DropdownMenu.Item
@@ -92,8 +91,7 @@ const GridTitleMobile = () => {
                     <DropdownMenu.Content
                         className="bg-white dark:bg-slate-800 rounded-xl shadow-lg
                             border border-border-light dark:border-border-dark
-                            py-1.5 min-w-[150px] z-50
-                            backdrop-blur-xl"
+                            py-1.5 min-w-[150px] z-50"
                         sideOffset={5}
                     >
                         <DropdownMenu.Item

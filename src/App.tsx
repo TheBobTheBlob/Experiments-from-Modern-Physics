@@ -6,9 +6,9 @@ import NavBar from "./components/TopBar/NavBar";
 
 function App() {
     return (
-        <div className="min-h-screen mesh-bg">
-            {/* Nav - fixed top, glassmorphism */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[1.8] bg-transparent p-2.5 pr-2.5 lg:pr-6 fixed w-full z-10 border-b border-border-light dark:border-border-dark">
+        <div className="min-h-screen">
+            {/* Nav - fixed top */}
+            <div className="bg-surface-light dark:bg-surface-dark p-2.5 pr-2.5 lg:pr-6 fixed w-full z-10 border-b border-border-light dark:border-border-dark">
                 <NavBar />
             </div>
 

@@ -52,7 +52,7 @@ const ExperimentGrid = () => {
                 (experiment: Experiment) =>
                     experiment.title.toLowerCase().includes(searchLC) ||
                     experiment.description.toLowerCase().includes(searchLC) ||
-                    experiment.channel.toLowerCase().includes(searchLC),
+                    experiment.channel.toLowerCase().includes(searchLC)
             );
         }
 
@@ -62,7 +62,7 @@ const ExperimentGrid = () => {
             json = json.sort((a: Experiment, b: Experiment) => a.duration - b.duration);
         } else {
             json = json.sort((a: Experiment, b: Experiment) =>
-                sortString(a.title.toLowerCase(), b.title.toLowerCase()),
+                sortString(a.title.toLowerCase(), b.title.toLowerCase())
             );
         }
 

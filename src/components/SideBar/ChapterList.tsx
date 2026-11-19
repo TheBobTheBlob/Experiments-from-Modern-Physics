@@ -34,8 +34,8 @@ const ChapterList = () => {
                     >
                         <span className={`flex items-center justify-center w-[26px] h-[26px] rounded-md shrink-0 text-sm font-bold text-white
                             ${item.id === chapter
-                                ? "bg-gradient-to-br from-accent-blue to-accent-indigo"
-                                : "bg-gradient-to-br from-accent-blue/70 to-accent-indigo/70"}`}>
+                                ? "bg-blue-600"
+                                : "bg-slate-400 dark:bg-slate-600"}`}>
                             {item.chapter}
                         </span>
                         <span

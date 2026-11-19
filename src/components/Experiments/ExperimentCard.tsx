@@ -39,18 +39,18 @@ const ExperimentCard = ({ experiment }: Props) => {
                 <div className="flex items-center gap-2 mb-3">
                     <span
                         className="px-2.5 py-1 text-xs font-semibold rounded-full
-                            bg-accent-violet/10 dark:bg-accent-violet/20
-                            text-accent-violet dark:text-violet-400 cursor-pointer
-                            hover:bg-accent-violet/20 dark:hover:bg-accent-violet/30 transition-colors"
+                            bg-accent-blue/10 dark:bg-accent-blue/20
+                            text-blue-700 dark:text-blue-300 cursor-pointer
+                            hover:bg-accent-blue/20 dark:hover:bg-accent-blue/30 transition-colors"
                         onClick={() => setChapter(experiment.chapter)}
                     >
                         Chapter {experiment.chapter}
                     </span>
                     <span
                         className="px-2.5 py-1 text-xs font-semibold rounded-full
-                            bg-accent-cyan/10 dark:bg-accent-cyan/20
-                            text-accent-cyan dark:text-cyan-400 cursor-pointer
-                            hover:bg-accent-cyan/20 dark:hover:bg-accent-cyan/30 transition-colors"
+                            bg-slate-100 dark:bg-slate-700/60
+                            text-slate-600 dark:text-slate-300 cursor-pointer
+                            hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                         onClick={() => openInNewTab(experiment.channelLink)}
                     >
                         <span className="flex items-center gap-1">
@@ -72,11 +72,10 @@ const ExperimentCard = ({ experiment }: Props) => {
             <div className="px-4 pb-4">
                 <button
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl
-                        bg-gradient-to-r from-accent-blue to-accent-indigo
+                        bg-blue-600
                         text-white font-medium cursor-pointer
-                        hover:brightness-110 hover:shadow-lg hover:shadow-accent-blue/30
-                        shadow-md shadow-accent-blue/20
-                        transition-all duration-300"
+                        hover:bg-blue-700
+                        transition-colors"
                     onClick={() => openInNewTab(experiment.link)}
                 >
                     <ExternalLink size={16} />
